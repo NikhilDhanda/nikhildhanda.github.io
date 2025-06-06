@@ -1,11 +1,11 @@
 body {
   font-family: 'Fira Code', monospace;
-  background: #0e0e0e;
   background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%);
   color: #e6e6e6;
   margin: 0;
   padding: 2rem;
   min-height: 100vh;
+  font-size: 14px; /* ↓ from 16px */
 }
 
 .container {
@@ -31,9 +31,8 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2rem; /* ↓ from 2.5rem */
   color: #00ff99;
-  font-size: 2.5rem;
   margin-top: 0;
 }
 
@@ -46,7 +45,8 @@ h1 {
 
 h2 {
   color: #00d2ff;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
+  font-size: 1.4rem; /* ↓ slightly */
 }
 
 a {
@@ -85,7 +85,7 @@ p {
 }
 
 .project-title {
-  font-size: 1.2rem;
+  font-size: 1rem; /* ↓ from 1.2rem */
   margin-bottom: 0.5rem;
   color: #00ffcc;
 }
@@ -102,10 +102,10 @@ p {
   background: linear-gradient(135deg, #00ff99, #00d2ff);
   color: #0f0f0f;
   border: none;
-  padding: 0.5rem 1.2rem;
+  padding: 0.4rem 1rem;
   border-radius: 6px;
   font-family: 'Fira Code', monospace;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 255, 200, 0.3);

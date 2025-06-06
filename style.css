@@ -1,14 +1,26 @@
-/* ─── BASE ─── */
+/* ─── BASE STYLES ─── */
 body {
   font-family: 'Fira Code', monospace;
-  background: url("blue-background.jpg") center / cover no-repeat fixed;
-  /* center  / cover  keeps it full-screen          */
-  /* fixed           makes it stay while you scroll */
+  background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%);
   color: #e6e6e6;
   margin: 0;
   padding: 2rem;
   min-height: 100vh;
   font-size: 14px;
+}
+
+/* ---- FULL-SCREEN BACKGROUND PHOTO + DARK OVERLAY ---- */
+body::before {
+  content: "";
+  position: fixed;          /* stays put while scrolling   */
+  inset: 0;                 /* top:0; right:0; bottom:0; left:0 */
+  z-index: -1;              /* sits behind all content     */
+
+  /* Layer 1: dark overlay   (rgba 0.6 = 60 % opaque) */
+  /* Layer 2: the background image                    */
+  background:
+      rgba(0,0,0,0.6),
+      url("blue-background.jpg") center / cover no-repeat;
 }
 
 /* ─── NAVBAR ─── */

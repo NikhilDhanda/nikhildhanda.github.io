@@ -1,12 +1,14 @@
 /* ─── BASE ─── */
 body {
   font-family: 'Fira Code', monospace;
-  background: linear-gradient(135deg,#0e0e0e 0%,#1a1a1a 100%);
-  color:#e6e6e6;
-  margin:0;
-  padding:2rem;
-  min-height:100vh;
-  font-size:14px;
+  background: url("blue-background.jpg") center / cover no-repeat fixed;
+  /* center  / cover  keeps it full-screen          */
+  /* fixed           makes it stay while you scroll */
+  color: #e6e6e6;
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  font-size: 14px;
 }
 
 /* ─── NAVBAR ─── */

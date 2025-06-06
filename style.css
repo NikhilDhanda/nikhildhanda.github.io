@@ -18,7 +18,7 @@ body::before {
 
   /* overlay on top, photo underneath */
   background:
-      rgba(0,0,0,0.30),                        /* 30 % dark tint */
+      rgba(255,0,0,0.50),                     /* 30 % dark tint */
       url("blue-background.jpg") center / cover no-repeat;
 }
 

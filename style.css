@@ -16,12 +16,11 @@ body::before {
   inset: 0;
   z-index: -1;
 
-  /*  overlay (first layer)    ↓ comma ↓      photo (second layer)  */
+  /* overlay on top, photo underneath */
   background:
-      rgba(0,0,0,0.10),
+      rgba(0,0,0,0.30),                        /* 30 % dark tint */
       url("blue-background.jpg") center / cover no-repeat;
 }
-
 
 
 /* ─── NAVBAR ─── */

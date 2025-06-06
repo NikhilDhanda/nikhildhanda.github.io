@@ -18,7 +18,7 @@ body::before {
   z-index: -1;                          /* sit behind everything */
   background:
       /* Layer 1 – semi-transparent black */
-      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.4),
       /* Layer 2 – your image */
       url("blue-background.jpg") center / cover no-repeat;
   /* optional: remove “fixed” here if you want the picture to scroll */

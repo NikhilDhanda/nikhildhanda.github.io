@@ -89,3 +89,25 @@ p {
   margin-bottom: 0.5rem;
   color: #00ffcc;
 }
+
+.language-toggle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.language-toggle button {
+  background: #1a1a1a;
+  color: #00ffff;
+  border: 1px solid #00ffff;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  font-family: 'Fira Code', monospace;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-toggle button:hover {
+  background: #00ffff;
+  color: #0e0e0e;
+}

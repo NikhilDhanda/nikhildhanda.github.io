@@ -82,25 +82,32 @@ a:hover{color:#ffaa00;border-bottom-color:#ffaa00;}
 .project-desc{margin:0 0 .5rem 0;padding-left:1em;}
 
 /* ─── MOBILE (≤500px) ─── */
-@media(max-width:500px){
-  body{padding:1rem;}
-  .container{padding:1.25rem;}
-  .top-nav{flex-wrap:wrap;justify-content:center;gap:.5rem;}
-  .tab-list{flex-wrap:wrap;justify-content:center;}
-  .tab-item{font-size:.9rem;padding:.45rem .9rem;white-space:nowrap;}
-  /* MOBILE language buttons stay in one row */
 @media (max-width: 500px) {
+
+  body      { padding: 1rem; }
+  .container{ padding: 1.25rem; }
+
+  /* Nav bar wraps neatly */
+  .top-nav  { flex-wrap: wrap; justify-content: center; gap: .5rem; }
+  .tab-list { flex-wrap: wrap; justify-content: center; }
+  .tab-item {
+    font-size: .9rem;
+    padding: .45rem .9rem;
+    white-space: nowrap;        /* keep JP labels in one line */
+  }
+
+  /* Language buttons stay in a single row */
   .language-toggle {
-    gap: 0.4rem;          /* small gap */
+    gap: 0.4rem;
     justify-content: center;
   }
   .language-toggle .lang-btn {
     padding: 0.4rem 0.7rem;
     font-size: 0.85rem;
-    flex: 1 1 auto;       /* let them shrink if needed */
-    min-width: 110px;     /* but not too tiny */
+    flex: 1 1 auto;             /* shrink as needed */
+    min-width: 110px;           /* but not too tiny */
   }
-}
 
-  h1{font-size:2rem;} p{font-size:.96rem;}
+  h1 { font-size: 2rem; }
+  p  { font-size: .96rem; }
 }

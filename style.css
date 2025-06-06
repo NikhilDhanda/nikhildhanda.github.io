@@ -180,51 +180,42 @@ a:hover {
    ──────────────────────────── */
 @media (max-width: 500px) {
 
-  /* body padding a bit tighter */
-  body {
-    padding: 1rem;
+  /* tighter outer padding */
+  body { padding: 1rem; }
+
+  /* card padding */
+  .container { padding: 1.25rem; }
+
+  /* NAV BAR -------------------------------- */
+  .top-nav {                 /* <- match the real class */
+    flex-wrap: wrap;         /* allow wrap */
+    justify-content: center; /* centre on small screens */
+    gap: 0.5rem;
   }
 
-  /* container padding tighter too */
-  .container {
-    padding: 1.25rem;
+  /* tab list now wraps nicely */
+  .tab-list   { flex-wrap: wrap; justify-content: center; }
+  .tab-item   {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.9rem;
+    white-space: nowrap;     /* keep JP labels on one line */
   }
 
-  /* NAV BAR  -------------------------------- */
-  .navbar {
-    display: flex;
-    flex-wrap: wrap;          /* allow wrap on small screens */
-    justify-content: center;  /* keep centred */
-    gap: 0.5rem;              /* tighter vertical/horizontal spacing */
-    margin-bottom: 1.25rem;
-  }
-
-  .navbar a {
-    font-size: 0.9rem;        /* shrink text a touch */
-    padding: 0.45rem 0.9rem;  /* slightly narrower buttons */
-    white-space: nowrap;      /* keep JP labels on one line */
-  }
-
-  /* LANGUAGE TOGGLE  ------------------------ */
+  /* LANGUAGE TOGGLE ------------------------ */
   .language-toggle {
-    flex-direction: column;   /* stack buttons */
+    flex-direction: column;  /* stack buttons */
     gap: 0.4rem;
     margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 260px;
+    align-items: center;
   }
-
-  .language-toggle button {
-    width: 100%;              /* full-width, easier tap target */
-    max-width: 260px;         /* but not huge on tablets */
+  .language-toggle .lang-btn {
+    width: 100%;             /* full-width tap targets */
     font-size: 0.9rem;
   }
 
-  /* HEADER SIZE ----------------------------- */
-  h1 {
-    font-size: 2rem;          /* scale headline down a bit */
-  }
-
-  /* BODY TEXT ------------------------------- */
-  p {
-    font-size: 0.96rem;
-  }
+  /* HEADER & BODY TEXT --------------------- */
+  h1 { font-size: 2rem; }
+  p  { font-size: 0.96rem; }
 }

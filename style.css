@@ -18,7 +18,7 @@ body::before {
 
   /*  overlay (first layer)    ↓ comma ↓      photo (second layer)  */
   background:
-      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.30),
       url("blue-background.jpg") center / cover no-repeat;
 }
 
@@ -62,7 +62,7 @@ body::before {
 .tab-content{display:none;}
 .tab-content.active{display:block;}
 
-/* ─── CARD CONTAINER ─── */
+/* ─── CARD  ─── */
 .container{
   margin:1rem 0;
   padding:2rem;

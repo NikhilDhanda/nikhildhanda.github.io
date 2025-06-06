@@ -175,45 +175,56 @@ a:hover {
   color: #00ffcc;
 }
 
-/* ─── RESPONSIVE DESIGN ─── */
-@media (max-width: 600px) {
+/* ────────────────────────────
+   MOBILE TWEAKS  (≤ 500 px)
+   ──────────────────────────── */
+@media (max-width: 500px) {
+
+  /* body padding a bit tighter */
   body {
     padding: 1rem;
   }
 
-  .top-nav {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
+  /* container padding tighter too */
+  .container {
+    padding: 1.25rem;
   }
 
-  .tab-list {
-    justify-content: space-around;
+  /* NAV BAR  -------------------------------- */
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;          /* allow wrap on small screens */
+    justify-content: center;  /* keep centred */
+    gap: 0.5rem;              /* tighter vertical/horizontal spacing */
+    margin-bottom: 1.25rem;
+  }
+
+  .navbar a {
+    font-size: 0.9rem;        /* shrink text a touch */
+    padding: 0.45rem 0.9rem;  /* slightly narrower buttons */
+    white-space: nowrap;      /* keep JP labels on one line */
+  }
+
+  /* LANGUAGE TOGGLE  ------------------------ */
+  .language-toggle {
+    flex-direction: column;   /* stack buttons */
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .language-toggle button {
+    width: 100%;              /* full-width, easier tap target */
+    max-width: 260px;         /* but not huge on tablets */
     font-size: 0.9rem;
   }
 
-  .language-toggle {
-    justify-content: center;
-  }
-
-  .lang-btn {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.85rem;
-  }
-
-  .container {
-    padding: 1.5rem;
-  }
-
+  /* HEADER SIZE ----------------------------- */
   h1 {
-    font-size: 1.4rem;
+    font-size: 2rem;          /* scale headline down a bit */
   }
 
-  h2 {
-    font-size: 1.2rem;
-  }
-
+  /* BODY TEXT ------------------------------- */
   p {
-    font-size: 0.95rem;
+    font-size: 0.96rem;
   }
 }

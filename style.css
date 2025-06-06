@@ -17,6 +17,7 @@ body {
   max-width: 900px;
   margin: 0 auto 1rem auto;
   padding: 0 1rem;
+  padding-bottom: 0.75rem;              /* ↓ extra space under tabs */
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -29,11 +30,13 @@ body {
 }
 
 .tab-item {
-  padding: 0.5rem 1rem;
+  position: relative;
+  padding: 0.4rem 0.8rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 4px;
   transition: background 0.3s ease, color 0.3s ease;
   color: #e6e6e6;
+  font-size: 0.95rem;
 }
 
 .tab-item.active {
@@ -52,7 +55,7 @@ body {
 }
 
 .lang-btn {
-  background: linear-gradient(135deg, #00ff99, #00d2ff);
+  background: linear-gradient(135deg, #ff8c00, #ffd700);
   color: #0f0f0f;
   border: none;
   padding: 0.4rem 0.8rem;
@@ -61,12 +64,12 @@ body {
   font-size: 0.9rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 255, 200, 0.3);
+  box-shadow: 0 2px 5px rgba(255, 140, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .lang-btn.active {
-  box-shadow: 0 2px 8px rgba(0,255,200,0.5);
+  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.5);
 }
 
 .lang-btn:hover {
@@ -78,15 +81,12 @@ body {
 .content-area {
   max-width: 800px;
   margin: 0 auto;
-  /* no extra padding, since each .container has its own padding */
 }
 
-/* Hide all .tab-content by default, only show .active */
+/* Hide all sections by default; only show .active */
 .tab-content {
   display: none;
 }
-
-/* Show the active tab */
 .tab-content.active {
   display: block;
 }
@@ -102,7 +102,7 @@ body {
   animation: fadeInUp 0.8s ease;
 }
 
-/* Fade‐in animation for container cards */
+/* Fade‐up effect */
 @keyframes fadeInUp {
   from {
     opacity: 0;

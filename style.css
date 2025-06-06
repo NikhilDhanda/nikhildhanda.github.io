@@ -10,15 +10,16 @@ body {
 }
 
 /* ---- FULL-SCREEN PHOTO + DARK OVERLAY ---- */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
 
-  /* overlay on top, photo underneath */
+  /* Layer 1: dark overlay as a 1-stop gradient
+     Layer 2: the photo                                    */
   background:
-      rgba(255,0,0,0.50),                     /* 30 % dark tint */
+      linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)),
       url("blue-background.jpg") center / cover no-repeat;
 }
 

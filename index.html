@@ -11,16 +11,30 @@
 
   <!-- ─── NAVBAR START ─── -->
   <nav class="top-nav">
+    <!-- Left: Tabs (bilingual) -->
     <ul class="tab-list">
-      <li data-tab="about" class="tab-item active">About Me</li>
-      <li data-tab="education" class="tab-item">Education</li>
-      <li data-tab="experience" class="tab-item">Experience</li>
-      <li data-tab="projects" class="tab-item">Projects</li>
+      <li data-tab="about" class="tab-item active">
+        <span class="tab-label-en">About Me</span>
+        <span class="tab-label-jp" style="display: none;">自己紹介</span>
+      </li>
+      <li data-tab="education" class="tab-item">
+        <span class="tab-label-en">Education</span>
+        <span class="tab-label-jp" style="display: none;">学歴</span>
+      </li>
+      <li data-tab="experience" class="tab-item">
+        <span class="tab-label-en">Experience</span>
+        <span class="tab-label-jp" style="display: none;">経験</span>
+      </li>
+      <li data-tab="projects" class="tab-item">
+        <span class="tab-label-en">Projects</span>
+        <span class="tab-label-jp" style="display: none;">プロジェクト</span>
+      </li>
     </ul>
 
+    <!-- Right: Language Toggle -->
     <div class="language-toggle">
-      <button id="btn-en" class="lang-btn active">ENG</button>
-      <button id="btn-jp" class="lang-btn">日本語</button>
+      <button id="btn-en" class="lang-btn active">🇬🇧 ENG</button>
+      <button id="btn-jp" class="lang-btn">🇯🇵 日本語</button>
     </div>
   </nav>
   <!-- ─── NAVBAR END ─── -->
@@ -31,7 +45,7 @@
 
     <!-- ── ABOUT ME SECTION ── -->
     <section id="section-about" class="tab-content active">
-      <!-- English version (visible by default) -->
+      <!-- English version -->
       <div class="lang-section lang-en">
         <div class="container">
           <h1><span class="gradient-text">Hi, I'm Nikhil</span> 👋</h1>
@@ -41,8 +55,7 @@
           <p><a href="https://github.com/NikhilDhanda" target="_blank">View my GitHub</a></p>
         </div>
       </div>
-
-      <!-- Japanese version (hidden by default) -->
+      <!-- Japanese version -->
       <div class="lang-section lang-jp" style="display: none;">
         <div class="container">
           <h1><span class="gradient-text">こんにちは、ニキルです</span> 👋</h1>
@@ -66,7 +79,6 @@
           <!-- …add more academic details… -->
         </div>
       </div>
-
       <!-- Japanese version -->
       <div class="lang-section lang-jp" style="display: none;">
         <div class="container">
@@ -92,7 +104,6 @@
           <!-- …add more roles/projects… -->
         </div>
       </div>
-
       <!-- Japanese version -->
       <div class="lang-section lang-jp" style="display: none;">
         <div class="container">
@@ -113,7 +124,6 @@
         <div class="container">
           <h2>Projects</h2>
 
-          <!-- Example project box (duplicate/fill as needed) -->
           <div class="project">
             <div class="project-title">Microsoft Defender Investigation</div>
             <div class="project-desc">
@@ -133,7 +143,6 @@
           <!-- …add more English project boxes… -->
         </div>
       </div>
-
       <!-- Japanese version -->
       <div class="lang-section lang-jp" style="display: none;">
         <div class="container">
@@ -166,56 +175,54 @@
 
   <!-- ─── JAVASCRIPT ─── -->
   <script>
-    // Tab‐switching logic:
+    // 1) Tab‐switching
     const tabs = document.querySelectorAll('.tab-item');
     const sections = document.querySelectorAll('.tab-content');
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // 1) Deactivate all tabs, hide sections
+        // Deactivate all tabs & hide all sections:
         tabs.forEach(t => t.classList.remove('active'));
         sections.forEach(s => s.classList.remove('active'));
-
-        // 2) Activate the clicked tab + its matching section
+        // Activate clicked tab & its section:
         tab.classList.add('active');
         document.getElementById('section-' + tab.dataset.tab).classList.add('active');
-
-        // 3) After switching tabs, re‐apply currently selected language to the newly active section
+        // After switching tabs, show correct language content:
         applyLanguage(currentLang);
       });
     });
 
-    // Language toggle logic:
+    // 2) Language switching
     const btnEn = document.getElementById('btn-en');
     const btnJp = document.getElementById('btn-jp');
-    let currentLang = 'en'; // default
+    let currentLang = 'en'; // default language
 
-    btnEn.addEventListener('click', () => { switchLang('en'); });
-    btnJp.addEventListener('click', () => { switchLang('jp'); });
+    btnEn.addEventListener('click', () => switchLang('en'));
+    btnJp.addEventListener('click', () => switchLang('jp'));
 
     function switchLang(lang) {
-      // 1) Mark buttons
+      // Mark the active language button
       btnEn.classList.remove('active');
       btnJp.classList.remove('active');
       document.getElementById('btn-' + lang).classList.add('active');
-
-      // 2) Store current language
       currentLang = lang;
-
-      // 3) Show/hide all lang‐sections globally
+      // Show/hide tab‐labels
+      document.querySelectorAll('.tab-label-en').forEach(el => el.style.display = (lang === 'en' ? 'inline' : 'none'));
+      document.querySelectorAll('.tab-label-jp').forEach(el => el.style.display = (lang === 'jp' ? 'inline' : 'none'));
+      // Show/hide content inside the active tab
       applyLanguage(lang);
     }
 
     function applyLanguage(lang) {
-      // Within the currently visible tab, show only the chosen lang, hide the other:
-      //— find the active section:
+      // In the currently visible tab, show only the chosen language’s .lang-section
       const activeSection = document.querySelector('.tab-content.active');
+      if (!activeSection) return;
       activeSection.querySelectorAll('.lang-section').forEach(div => {
-        div.style.display = (div.classList.contains('lang-' + lang)) ? 'block' : 'none';
+        div.style.display = div.classList.contains('lang-' + lang) ? 'block' : 'none';
       });
     }
 
-    // On load, ensure English is showing:
+    // On first load, ensure English is shown:
     document.addEventListener('DOMContentLoaded', () => {
       applyLanguage(currentLang);
     });

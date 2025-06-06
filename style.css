@@ -117,33 +117,30 @@ p {
   transform: scale(1.05);
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 500px) {
   body {
-    font-size: 12px; /* super compact */
-  }
-
-  h1 {
-    font-size: 1.4rem;
-  }
-
-  h2 {
-    font-size: 1.1rem;
-  }
-
-  .project-title {
-    font-size: 0.85rem;
-  }
-
-  p {
-    line-height: 1.4;
-  }
-
-  .language-toggle button {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.8rem;
+    padding: 1rem;
   }
 
   .container {
-    padding: 1rem;
+    padding: 1.5rem;
+  }
+
+  .language-toggle {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .language-toggle button {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
   }
 }

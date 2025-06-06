@@ -19,7 +19,7 @@ body::before {
       /* dark overlay so text stays readable */
       rgba(0,0,0,0.65)      /* adjust 0.5–0.7 for more/less darkness */
       /* photo underneath */
-      url("my-bg.jpg") center/cover no-repeat;
+      url("blue-background.jpg") center/cover no-repeat;
   z-index: -1;              /* keep it behind all content */
 }
 

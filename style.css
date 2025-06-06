@@ -132,24 +132,42 @@ a{
 }
 a:hover{color:#ffaa00;border-bottom-color:#ffaa00;}
 
-/*━━━━━━━━  MOBILE ≤ 500px  ━━━━━━━━*/
-@media (max-width:500px){
-  body{padding:1rem;}
-  .container{padding:1.25rem;}
-  .top-nav{flex-wrap:wrap;justify-content:center;gap:.5rem;}
-  .tab-list{flex-wrap:wrap;justify-content:center;}
-  .tab-item{
-    font-size:.9rem;
-    white-space:nowrap;
+/* ─── MOBILE (≤ 500px) ─── */
+@media (max-width: 500px) {
+
+  body       { padding: 1rem; }
+  .container { padding: 1.25rem; }
+
+  /* NAV BAR — wraps cleanly but stays vertically balanced */
+  .top-nav{
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: .5rem;     /* horizontal gap between items  */
+    row-gap:    .3rem;     /* vertical gap between tab row & lang row */
+    padding-block: .6rem;  /* .6rem top  +  .6rem bottom   */
   }
+
+  .tab-list{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .tab-item{
+    font-size: .9rem;
+    white-space: nowrap;
+  }
+
+  /* LANGUAGE TOGGLE — centred and matches row-gap */
   .language-toggle{
-    gap:.4rem;
-    justify-content:center;
+    gap: .4rem;
+    justify-content: center;
+    margin-top: .3rem;     /* equal to row-gap so pills sit centred */
   }
   .language-toggle .lang-btn{
-    flex:1 1 auto;
-    min-width:110px;
+    flex: 1 1 auto;
+    min-width: 110px;
   }
-  h1{font-size:2rem;}
-  p{font-size:.96rem;}
+
+  h1 { font-size: 2rem; }
+  p  { font-size: .96rem; }
 }
+

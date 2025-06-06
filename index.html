@@ -8,32 +8,217 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="language-toggle">
-    <button onclick="showLang('en')">🇬🇧 English</button>
-    <button onclick="showLang('jp')">🇯🇵 日本語</button>
-  </div>
 
-  <div class="container lang-section" id="en">
-    <h1><span class="gradient-text">Hi, I'm Nikhil</span> 👋</h1>
-    <p>🔐 Cybersecurity student | Blue team focused</p>
-    <p>🛡️ Labs, IR, SIEM, Defender</p>
-    <p>🌏 Goal: Cybersecurity Analyst Role 🇯🇵</p>
-    <p><a href="https://github.com/NikhilDhanda" target="_blank">View my GitHub</a></p>
-  </div>
+  <!-- ─── NAVBAR START ─── -->
+  <nav class="top-nav">
+    <ul class="tab-list">
+      <li data-tab="about" class="tab-item active">About Me</li>
+      <li data-tab="education" class="tab-item">Education</li>
+      <li data-tab="experience" class="tab-item">Experience</li>
+      <li data-tab="projects" class="tab-item">Projects</li>
+    </ul>
 
-  <div class="container lang-section" id="jp" style="display: none;">
-    <h1><span class="gradient-text">こんにちは、ニキルです</span> 👋</h1>
-    <p>🔐 サイバーセキュリティ専攻の学生 | ブルーチーム志向</p>
-    <p>🛡️ Defender、SIEM、IR、ラボ経験あり</p>
-    <p>🌏 目標：サイバーセキュリティの仕事 🇯🇵</p>
-    <p><a href="https://github.com/NikhilDhanda" target="_blank">GitHubを見る</a></p>
-  </div>
+    <div class="language-toggle">
+      <button id="btn-en" class="lang-btn active">ENG</button>
+      <button id="btn-jp" class="lang-btn">日本語</button>
+    </div>
+  </nav>
+  <!-- ─── NAVBAR END ─── -->
 
+
+  <!-- ─── CONTENT AREA START ─── -->
+  <main class="content-area">
+
+    <!-- ── ABOUT ME SECTION ── -->
+    <section id="section-about" class="tab-content active">
+      <!-- English version (visible by default) -->
+      <div class="lang-section lang-en">
+        <div class="container">
+          <h1><span class="gradient-text">Hi, I'm Nikhil</span> 👋</h1>
+          <p>🔐 Cybersecurity student | Blue team focused</p>
+          <p>🛡️ Labs, IR, SIEM, Defender</p>
+          <p>🌏 Goal: Cybersecurity Analyst Role 🇯🇵</p>
+          <p><a href="https://github.com/NikhilDhanda" target="_blank">View my GitHub</a></p>
+        </div>
+      </div>
+
+      <!-- Japanese version (hidden by default) -->
+      <div class="lang-section lang-jp" style="display: none;">
+        <div class="container">
+          <h1><span class="gradient-text">こんにちは、ニキルです</span> 👋</h1>
+          <p>🔐 サイバーセキュリティ専攻の学生 | ブルーチーム志向</p>
+          <p>🛡️ Defender、SIEM、IR、ラボ経験あり</p>
+          <p>🌏 目標：サイバーセキュリティの仕事 🇯🇵</p>
+          <p><a href="https://github.com/NikhilDhanda" target="_blank">GitHubを見る</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION SECTION ── -->
+    <section id="section-education" class="tab-content">
+      <!-- English version -->
+      <div class="lang-section lang-en">
+        <div class="container">
+          <h2>Education</h2>
+          <p>• Currently enrolled in Cybersecurity Diploma, Unitec Institute of Technology</p>
+          <p>• Completed Computer Information Systems Diploma</p>
+          <p>• B.Sc. Computer Science (in progress)</p>
+          <!-- …add more academic details… -->
+        </div>
+      </div>
+
+      <!-- Japanese version -->
+      <div class="lang-section lang-jp" style="display: none;">
+        <div class="container">
+          <h2>学歴</h2>
+          <p>• ユニテック工科大学でサイバーセキュリティ・ディプロマ取得中</p>
+          <p>• コンピュータ情報システム・ディプロマを修了</p>
+          <p>• コンピュータサイエンス学士号取得中</p>
+          <!-- …追加の学歴情報… -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE SECTION ── -->
+    <section id="section-experience" class="tab-content">
+      <!-- English version -->
+      <div class="lang-section lang-en">
+        <div class="container">
+          <h2>Experience</h2>
+          <p>• Cybersecurity Intern at Spark NZ (May 2025 – present)</p>
+          <p>  – Worked on Defender investigations, threat hunts, SIEM analysis.</p>
+          <p>• Home lab blue-team setups (Debian VMs, DDoS simulations, etc.)</p>
+          <p>• Completed various TryHackMe and HackTheBox modules</p>
+          <!-- …add more roles/projects… -->
+        </div>
+      </div>
+
+      <!-- Japanese version -->
+      <div class="lang-section lang-jp" style="display: none;">
+        <div class="container">
+          <h2>経験</h2>
+          <p>• Spark NZでのサイバーセキュリティ・インターン (2025年5月～現在)</p>
+          <p>  – Defender調査、サイバー脅威ハント、SIEM分析を担当</p>
+          <p>• 自宅ラボでのブルーチーム構築（Debian仮想マシン、DDoSシミュレーションなど）</p>
+          <p>• TryHackMeやHackTheBoxの各モジュールを修了</p>
+          <!-- …追加の経験… -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS SECTION ── -->
+    <section id="section-projects" class="tab-content">
+      <!-- English version -->
+      <div class="lang-section lang-en">
+        <div class="container">
+          <h2>Projects</h2>
+
+          <!-- Example project box (duplicate/fill as needed) -->
+          <div class="project">
+            <div class="project-title">Microsoft Defender Investigation</div>
+            <div class="project-desc">
+              English write-up: Walkthrough of an internal malware incident using Defender’s advanced hunting, custom alerts, and timeline view.
+            </div>
+            <a href="https://github.com/NikhilDhanda/defender-investigation-lab" target="_blank">View on GitHub</a>
+          </div>
+
+          <div class="project">
+            <div class="project-title">KQL &amp; SIEM Hunting Queries</div>
+            <div class="project-desc">
+              Created custom KQL queries to detect anomalous PowerShell usage, suspicious user logins, and lateral-movement patterns.
+            </div>
+            <a href="https://github.com/NikhilDhanda/siem-hunting-lab" target="_blank">View on GitHub</a>
+          </div>
+
+          <!-- …add more English project boxes… -->
+        </div>
+      </div>
+
+      <!-- Japanese version -->
+      <div class="lang-section lang-jp" style="display: none;">
+        <div class="container">
+          <h2>プロジェクト</h2>
+
+          <div class="project">
+            <div class="project-title">Microsoft Defender 調査</div>
+            <div class="project-desc">
+              日本語パート：Defenderの高度な検索、カスタムアラート、タイムライン機能を使用して内部マルウェアインシデントを分析した手順。
+            </div>
+            <a href="https://github.com/NikhilDhanda/defender-investigation-lab" target="_blank">GitHubで見る</a>
+          </div>
+
+          <div class="project">
+            <div class="project-title">KQL &amp; SIEM ハンティングクエリ</div>
+            <div class="project-desc">
+              カスタムKQLクエリを作成し、不審なPowerShell実行、異常ユーザーログイン、ラテラルムーブメントパターンを検出。
+            </div>
+            <a href="https://github.com/NikhilDhanda/siem-hunting-lab" target="_blank">GitHubで見る</a>
+          </div>
+
+          <!-- …他の日本語プロジェクトボックス… -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- ─── CONTENT AREA END ─── -->
+
+
+  <!-- ─── JAVASCRIPT ─── -->
   <script>
-    function showLang(lang) {
-      document.querySelectorAll('.lang-section').forEach(el => el.style.display = 'none');
-      document.getElementById(lang).style.display = 'block';
+    // Tab‐switching logic:
+    const tabs = document.querySelectorAll('.tab-item');
+    const sections = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // 1) Deactivate all tabs, hide sections
+        tabs.forEach(t => t.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+
+        // 2) Activate the clicked tab + its matching section
+        tab.classList.add('active');
+        document.getElementById('section-' + tab.dataset.tab).classList.add('active');
+
+        // 3) After switching tabs, re‐apply currently selected language to the newly active section
+        applyLanguage(currentLang);
+      });
+    });
+
+    // Language toggle logic:
+    const btnEn = document.getElementById('btn-en');
+    const btnJp = document.getElementById('btn-jp');
+    let currentLang = 'en'; // default
+
+    btnEn.addEventListener('click', () => { switchLang('en'); });
+    btnJp.addEventListener('click', () => { switchLang('jp'); });
+
+    function switchLang(lang) {
+      // 1) Mark buttons
+      btnEn.classList.remove('active');
+      btnJp.classList.remove('active');
+      document.getElementById('btn-' + lang).classList.add('active');
+
+      // 2) Store current language
+      currentLang = lang;
+
+      // 3) Show/hide all lang‐sections globally
+      applyLanguage(lang);
     }
+
+    function applyLanguage(lang) {
+      // Within the currently visible tab, show only the chosen lang, hide the other:
+      //— find the active section:
+      const activeSection = document.querySelector('.tab-content.active');
+      activeSection.querySelectorAll('.lang-section').forEach(div => {
+        div.style.display = (div.classList.contains('lang-' + lang)) ? 'block' : 'none';
+      });
+    }
+
+    // On load, ensure English is showing:
+    document.addEventListener('DOMContentLoaded', () => {
+      applyLanguage(currentLang);
+    });
   </script>
 </body>
 </html>

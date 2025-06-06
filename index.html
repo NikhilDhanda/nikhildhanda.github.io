@@ -8,12 +8,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="container">
+  <div class="language-toggle">
+    <button onclick="showLang('en')">🇬🇧 English</button>
+    <button onclick="showLang('jp')">🇯🇵 日本語</button>
+  </div>
+
+  <div class="container lang-section" id="en">
     <h1><span class="gradient-text">Hi, I'm Nikhil 👋</span></h1>
     <p>🔐 Cybersecurity student | Blue team focused</p>
     <p>🛡️ Labs, IR, SIEM, Defender</p>
     <p>🌏 Goal: Work in Japan 🇯🇵</p>
     <p><a href="https://github.com/NikhilDhanda" target="_blank">View my GitHub</a></p>
   </div>
+
+  <div class="container lang-section" id="jp" style="display: none;">
+    <h1><span class="gradient-text">こんにちは、ニキルです 👋</span></h1>
+    <p>🔐 サイバーセキュリティ専攻の学生 | ブルーチーム志向</p>
+    <p>🛡️ Defender、SIEM、IR、ラボ経験あり</p>
+    <p>🌏 目標：日本でサイバーセキュリティの仕事 🇯🇵</p>
+    <p><a href="https://github.com/NikhilDhanda" target="_blank">GitHubを見る</a></p>
+  </div>
+
+  <script>
+    function showLang(lang) {
+      document.querySelectorAll('.lang-section').forEach(el => el.style.display = 'none');
+      document.getElementById(lang).style.display = 'block';
+    }
+  </script>
 </body>
 </html>

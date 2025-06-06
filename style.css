@@ -88,7 +88,19 @@ a:hover{color:#ffaa00;border-bottom-color:#ffaa00;}
   .top-nav{flex-wrap:wrap;justify-content:center;gap:.5rem;}
   .tab-list{flex-wrap:wrap;justify-content:center;}
   .tab-item{font-size:.9rem;padding:.45rem .9rem;white-space:nowrap;}
-  .language-toggle{flex-direction:column;gap:.4rem;margin-bottom:1.5rem;width:100%;max-width:260px;align-items:center;}
-  .language-toggle .lang-btn{width:100%;font-size:.9rem;}
+  /* MOBILE language buttons stay in one row */
+@media (max-width: 500px) {
+  .language-toggle {
+    gap: 0.4rem;          /* small gap */
+    justify-content: center;
+  }
+  .language-toggle .lang-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+    flex: 1 1 auto;       /* let them shrink if needed */
+    min-width: 110px;     /* but not too tiny */
+  }
+}
+
   h1{font-size:2rem;} p{font-size:.96rem;}
 }

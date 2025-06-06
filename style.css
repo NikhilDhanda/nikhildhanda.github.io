@@ -219,22 +219,3 @@ a:hover {
   h1 { font-size: 2rem; }
   p  { font-size: 0.96rem; }
 }
-
-/* ─── EXPERIENCE CARD ─── */
-.experience-card {
-  background: #1a1a1a;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,255,200,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.experience-card:hover {
-  transform: scale(1.01);
-  box-shadow: 0 4px 10px rgba(0,255,200,0.2);
-}
-.experience-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #00ffcc;
-}

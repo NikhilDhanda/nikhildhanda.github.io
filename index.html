@@ -11,13 +11,27 @@
 
   <!-- ─── NAVBAR START ─── -->
   <nav class="top-nav">
+    <!-- Left: Tabs (bilingual) -->
     <ul class="tab-list">
-      <li data-tab="about"      class="tab-item active"><span class="tab-label-en">About Me</span><span class="tab-label-jp" style="display:none;">自己紹介</span></li>
-      <li data-tab="education"  class="tab-item"><span class="tab-label-en">Education</span><span class="tab-label-jp" style="display:none;">学歴</span></li>
-      <li data-tab="experience" class="tab-item"><span class="tab-label-en">Experience</span><span class="tab-label-jp" style="display:none;">経験</span></li>
-      <li data-tab="projects"   class="tab-item"><span class="tab-label-en">Projects</span><span class="tab-label-jp" style="display:none;">プロジェクト</span></li>
+      <li data-tab="about" class="tab-item active">
+        <span class="tab-label-en">About Me</span>
+        <span class="tab-label-jp" style="display: none;">自己紹介</span>
+      </li>
+      <li data-tab="education" class="tab-item">
+        <span class="tab-label-en">Education</span>
+        <span class="tab-label-jp" style="display: none;">学歴</span>
+      </li>
+      <li data-tab="experience" class="tab-item">
+        <span class="tab-label-en">Experience</span>
+        <span class="tab-label-jp" style="display: none;">経験</span>
+      </li>
+      <li data-tab="projects" class="tab-item">
+        <span class="tab-label-en">Projects</span>
+        <span class="tab-label-jp" style="display: none;">プロジェクト</span>
+      </li>
     </ul>
 
+    <!-- Right: Language Toggle -->
     <div class="language-toggle">
       <button id="btn-en" class="lang-btn active">🇬🇧 ENG</button>
       <button id="btn-jp" class="lang-btn">🇯🇵 日本語</button>
@@ -25,12 +39,13 @@
   </nav>
   <!-- ─── NAVBAR END ─── -->
 
+
   <!-- ─── CONTENT AREA START ─── -->
   <main class="content-area">
 
-    <!-- ── ABOUT ME ── -->
+    <!-- ── ABOUT ME SECTION ── -->
     <section id="section-about" class="tab-content active">
-      <!-- EN -->
+      <!-- English version -->
       <div class="lang-section lang-en">
         <div class="container">
           <h1><span class="gradient-text">Hi, I'm Nikhil</span> 👋</h1>
@@ -40,8 +55,8 @@
           <p><a href="https://github.com/NikhilDhanda" target="_blank">View my GitHub</a></p>
         </div>
       </div>
-      <!-- JP -->
-      <div class="lang-section lang-jp" style="display:none;">
+      <!-- Japanese version -->
+      <div class="lang-section lang-jp" style="display: none;">
         <div class="container">
           <h1><span class="gradient-text">こんにちは、ニキルです</span> 👋</h1>
           <p>🔐 サイバーセキュリティ専攻の学生 | ブルーチーム志向</p>
@@ -52,102 +67,165 @@
       </div>
     </section>
 
-    <!-- ── EDUCATION ── -->
+    <!-- ── EDUCATION SECTION ── -->
     <section id="section-education" class="tab-content">
-      <!-- EN -->
+      <!-- English version -->
       <div class="lang-section lang-en">
         <div class="container">
           <h2>Education</h2>
-          <p>• Cybersecurity Diploma — Unitec Institute of Technology (current)</p>
-          <p>• Computer Information Systems Diploma (completed)</p>
+          <p>• Currently enrolled in Cybersecurity Diploma, Unitec Institute of Technology</p>
+          <p>• Completed Computer Information Systems Diploma</p>
           <p>• B.Sc. Computer Science (in progress)</p>
+          <!-- …add more academic details… -->
         </div>
       </div>
-      <!-- JP -->
-      <div class="lang-section lang-jp" style="display:none;">
+      <!-- Japanese version -->
+      <div class="lang-section lang-jp" style="display: none;">
         <div class="container">
           <h2>学歴</h2>
-          <p>• ユニテック工科大学 サイバーセキュリティ・ディプロマ在学中</p>
-          <p>• コンピュータ情報システム・ディプロマ修了</p>
+          <p>• ユニテック工科大学でサイバーセキュリティ・ディプロマ取得中</p>
+          <p>• コンピュータ情報システム・ディプロマを修了</p>
           <p>• コンピュータサイエンス学士号取得中</p>
+          <!-- …追加の学歴情報… -->
         </div>
       </div>
     </section>
 
-    <!-- ── EXPERIENCE ── -->
+    <!-- ── EXPERIENCE SECTION ── -->
     <section id="section-experience" class="tab-content">
-      <!-- EN -->
+      <!-- English version -->
       <div class="lang-section lang-en">
         <div class="container">
           <h2>Experience</h2>
-
-          <div class="experience-card">
-            <div class="experience-title">
-              🔹 Spark NZ — Cybersecurity Intern
-              <span style="font-weight:normal;font-size:0.9rem;">
-                (Aug&nbsp;2024 – Jun&nbsp;2025, ≈150 hrs)
-              </span>
-            </div>
-
-            <ul class="project-desc">
-              <li><strong>Network Detection &amp; Response 🔍</strong><br>
-                  • Built Splunk dashboards • Analysed Suricata alerts • Investigated RDP traffic with Arkime</li>
-              <li><strong>Endpoint &amp; Cloud Security ☁️</strong><br>
-                  • Managed Defender incidents • Custom alerts • KQL hunting in Sentinel</li>
-              <li><strong>Email &amp; Phishing Analysis 📧</strong><br>
-                  • Dissected phishing emails via threat-intel look-ups</li>
-              <li><strong>Vulnerability Scanning 🛠️</strong><br>
-                  • Observed credentialed scans and risk prioritisation</li>
-              <li><strong>Malware &amp; Forensics 🧬</strong><br>
-                  • Analysed malware samples &amp; ransomware behaviour • Learned evidence-handling workflow</li>
-            </ul>
-
-            <p><em>Key skills:</em> Splunk | Defender | Sentinel | SIEM/EDR lifecycle | Basic DFIR</p>
-          </div>
+          <p>• Cybersecurity Intern at Spark NZ (May 2025 – present)</p>
+          <p>  – Worked on Defender investigations, threat hunts, SIEM analysis.</p>
+          <p>• Home lab blue-team setups (Debian VMs, DDoS simulations, etc.)</p>
+          <p>• Completed various TryHackMe and HackTheBox modules</p>
+          <!-- …add more roles/projects… -->
         </div>
       </div>
-      <!-- JP -->
-      <div class="lang-section lang-jp" style="display:none;">
+      <!-- Japanese version -->
+      <div class="lang-section lang-jp" style="display: none;">
         <div class="container">
           <h2>経験</h2>
-
-          <div class="experience-card">
-            <div class="experience-title">
-              🔹 Spark NZ — サイバーセキュリティ インターン
-              <span style="font-weight:normal;font-size:0.9rem;">
-                （2024年8月 – 2025年6月、約150時間）
-              </span>
-            </div>
-
-            <ul class="project-desc">
-              <li><strong>ネットワーク検知 &amp; レスポンス 🔍</strong><br>
-                  • Splunkでダッシュボード作成 • Suricataアラート分析 • ArkimeでRDPトラフィック調査</li>
-              <li><strong>エンドポイント &amp; クラウドセキュリティ ☁️</strong><br>
-                  • Defenderアラート対応 • カスタムアラート作成 • SentinelでKQLハンティング</li>
-              <li><strong>メール &amp; フィッシング解析 📧</strong><br>
-                  • 脅威インテリジェンスを用いたフィッシングメール調査</li>
-              <li><strong>脆弱性スキャン 🛠️</strong><br>
-                  • 認証付きスキャンを観察し、リスク優先度付けを学習</li>
-              <li><strong>マルウェア &amp; フォレンジック 🧬</strong><br>
-                  • マルウェアサンプルとランサムウェア挙動を分析 • 証拠取扱いフローを習得</li>
-            </ul>
-
-            <p><em>主要スキル:</em> Splunk | Defender | Sentinel | SIEM/EDR運用 | DFIR基礎</p>
-          </div>
+          <p>• Spark NZでのサイバーセキュリティ・インターン (2025年5月～現在)</p>
+          <p>  – Defender調査、サイバー脅威ハント、SIEM分析を担当</p>
+          <p>• 自宅ラボでのブルーチーム構築（Debian仮想マシン、DDoSシミュレーションなど）</p>
+          <p>• TryHackMeやHackTheBoxの各モジュールを修了</p>
+          <!-- …追加の経験… -->
         </div>
       </div>
     </section>
 
-    <!-- ── PROJECTS ── -->
-    <!-- (unchanged) -->
-    … your existing Projects section …
+    <!-- ── PROJECTS SECTION ── -->
+    <section id="section-projects" class="tab-content">
+      <!-- English version -->
+      <div class="lang-section lang-en">
+        <div class="container">
+          <h2>Projects</h2>
+
+          <div class="project">
+            <div class="project-title">Microsoft Defender Investigation</div>
+            <div class="project-desc">
+              English write-up: Walkthrough of an internal malware incident using Defender’s advanced hunting, custom alerts, and timeline view.
+            </div>
+            <a href="https://github.com/NikhilDhanda/defender-investigation-lab" target="_blank">View on GitHub</a>
+          </div>
+
+          <div class="project">
+            <div class="project-title">KQL &amp; SIEM Hunting Queries</div>
+            <div class="project-desc">
+              Created custom KQL queries to detect anomalous PowerShell usage, suspicious user logins, and lateral-movement patterns.
+            </div>
+            <a href="https://github.com/NikhilDhanda/siem-hunting-lab" target="_blank">View on GitHub</a>
+          </div>
+
+          <!-- …add more English project boxes… -->
+        </div>
+      </div>
+      <!-- Japanese version -->
+      <div class="lang-section lang-jp" style="display: none;">
+        <div class="container">
+          <h2>プロジェクト</h2>
+
+          <div class="project">
+            <div class="project-title">Microsoft Defender 調査</div>
+            <div class="project-desc">
+              日本語パート：Defenderの高度な検索、カスタムアラート、タイムライン機能を使用して内部マルウェアインシデントを分析した手順。
+            </div>
+            <a href="https://github.com/NikhilDhanda/defender-investigation-lab" target="_blank">GitHubで見る</a>
+          </div>
+
+          <div class="project">
+            <div class="project-title">KQL &amp; SIEM ハンティングクエリ</div>
+            <div class="project-desc">
+              カスタムKQLクエリを作成し、不審なPowerShell実行、異常ユーザーログイン、ラテラルムーブメントパターンを検出。
+            </div>
+            <a href="https://github.com/NikhilDhanda/siem-hunting-lab" target="_blank">GitHubで見る</a>
+          </div>
+
+          <!-- …他の日本語プロジェクトボックス… -->
+        </div>
+      </div>
+    </section>
 
   </main>
   <!-- ─── CONTENT AREA END ─── -->
 
+
+  <!-- ─── JAVASCRIPT ─── -->
   <script>
-    /* unchanged JS */
-    …
+    // 1) Tab‐switching
+    const tabs = document.querySelectorAll('.tab-item');
+    const sections = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Deactivate all tabs & hide all sections:
+        tabs.forEach(t => t.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+        // Activate clicked tab & its section:
+        tab.classList.add('active');
+        document.getElementById('section-' + tab.dataset.tab).classList.add('active');
+        // After switching tabs, show correct language content:
+        applyLanguage(currentLang);
+      });
+    });
+
+    // 2) Language switching
+    const btnEn = document.getElementById('btn-en');
+    const btnJp = document.getElementById('btn-jp');
+    let currentLang = 'en'; // default language
+
+    btnEn.addEventListener('click', () => switchLang('en'));
+    btnJp.addEventListener('click', () => switchLang('jp'));
+
+    function switchLang(lang) {
+      // Mark the active language button
+      btnEn.classList.remove('active');
+      btnJp.classList.remove('active');
+      document.getElementById('btn-' + lang).classList.add('active');
+      currentLang = lang;
+      // Show/hide tab‐labels
+      document.querySelectorAll('.tab-label-en').forEach(el => el.style.display = (lang === 'en' ? 'inline' : 'none'));
+      document.querySelectorAll('.tab-label-jp').forEach(el => el.style.display = (lang === 'jp' ? 'inline' : 'none'));
+      // Show/hide content inside the active tab
+      applyLanguage(lang);
+    }
+
+    function applyLanguage(lang) {
+      // In the currently visible tab, show only the chosen language’s .lang-section
+      const activeSection = document.querySelector('.tab-content.active');
+      if (!activeSection) return;
+      activeSection.querySelectorAll('.lang-section').forEach(div => {
+        div.style.display = div.classList.contains('lang-' + lang) ? 'block' : 'none';
+      });
+    }
+
+    // On first load, ensure English is shown:
+    document.addEventListener('DOMContentLoaded', () => {
+      applyLanguage(currentLang);
+    });
   </script>
 </body>
 </html>

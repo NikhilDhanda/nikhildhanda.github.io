@@ -18,7 +18,7 @@ body::before {
 
   /*  overlay (first layer)    ↓ comma ↓      photo (second layer)  */
   background:
-      rgba(0,0,0,0.30),
+      rgba(0,0,0,0.10),
       url("blue-background.jpg") center / cover no-repeat;
 }
 

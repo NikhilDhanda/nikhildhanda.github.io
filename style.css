@@ -9,19 +9,19 @@ body {
   font-size: 14px;
 }
 
-
-/* background photo + dark overlay */
+/* ---- FULL-SCREEN PHOTO + DARK OVERLAY ---- */
 body::before {
   content: "";
-  position: fixed;          /* stick to viewport */
-  inset: 0;                 /* shorthand for top/right/bottom/left: 0; */
-  background: 
-      /* dark overlay so text stays readable */
-      rgba(0,0,0,0.65)      /* adjust 0.5–0.7 for more/less darkness */
-      /* photo underneath */
-      url("blue-background.jpg") center/cover no-repeat;
-  z-index: -1;              /* keep it behind all content */
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  /*  overlay (first layer)    ↓ comma ↓      photo (second layer)  */
+  background:
+      rgba(0,0,0,0.65),
+      url("blue-background.jpg") center / cover no-repeat;
 }
+
 
 
 /* ─── NAVBAR ─── */

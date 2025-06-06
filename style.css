@@ -117,3 +117,30 @@ p {
   transform: scale(1.05);
 }
 
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .project-title {
+    font-size: 0.95rem;
+  }
+
+  .language-toggle button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+}
+

@@ -30,17 +30,18 @@ body::before{
       url("blue-background.jpg") center/cover no-repeat;
 }
 
-/*━━━━━━━━  NAVBAR  ━━━━━━━━*/
+/* ─── NAVBAR ─── */
 .top-nav{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  max-width:900px;
+  align-items:center;      /* keeps items vertically centred */
+  max-width:900px;         /* keep your 900-px cap */
   margin:0 auto 1rem;
-  padding:0 1rem 0.75rem;
-  border-bottom:1px solid rgba(255,255,255,0.1);
+  padding:0.5rem 1rem;     /* ⬅︎  equal 0.5 rem top + bottom  */
   background:var(--nav-bg);
   backdrop-filter:blur(var(--blur));
+  border-radius:var(--btn-radius);
+  border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 /* tabs */

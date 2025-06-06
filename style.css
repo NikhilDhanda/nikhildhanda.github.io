@@ -1,28 +1,29 @@
 /* ─── BASE STYLES ─── */
-body {
-  font-family: 'Fira Code', monospace;
-  /* keep the gradient as a quick-loading fallback */
-  background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%);
-  color: #e6e6e6;
-  margin: 0;
-  padding: 2rem;
-  min-height: 100vh;
-  font-size: 14px;
+body{
+  font-family:'Fira Code',monospace;
+  /* gradient is just a quick-load fallback */
+  background:linear-gradient(135deg,#0e0e0e 0%,#1a1a1a 100%);
+  color:#e6e6e6;
+  margin:0;
+  padding:2rem;
+  min-height:100vh;
+  font-size:14px;
 }
 
-/* ---- FULL-SCREEN PHOTO with DARK OVERLAY ---- */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;                             /* top/right/bottom/left = 0 */
-  z-index: -1;                          /* sit behind everything */
+/* ---- FULL-SCREEN PHOTO + DARK OVERLAY ---- */
+body::before{
+  content:"";
+  position:fixed;      /* keeps the photo & overlay pinned */
+  inset:0;             /* top/right/bottom/left = 0        */
+  z-index:-1;          /* behind every other element       */
+
+  /* first layer = dark tint   (0.6 = 60 % opacity) */
+  /* second layer = your image */
   background:
-      /* Layer 1 – semi-transparent black */
-      rgba(0,0,0,0.4),
-      /* Layer 2 – your image */
-      url("blue-background.jpg") center / cover no-repeat;
-  /* optional: remove “fixed” here if you want the picture to scroll */
+      rgba(0,0,0,0.6),                                   /* overlay */
+      url("blue-background.jpg") center/cover no-repeat; /* photo   */
 }
+
 
 /* ─── NAVBAR ─── */
 .top-nav{

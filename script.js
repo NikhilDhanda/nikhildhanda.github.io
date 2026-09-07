@@ -21,7 +21,11 @@ function setLanguage(language) {
     button.setAttribute("aria-pressed", String(isActive));
   });
 
-  localStorage.setItem("portfolio-language", language);
+  try {
+    localStorage.setItem("portfolio-language", language);
+  } catch {
+    // The language switch still works when storage is unavailable.
+  }
 }
 
 languageButtons.forEach((button) => {
@@ -40,7 +44,20 @@ navigation.querySelectorAll("a").forEach((link) => {
   });
 });
 
-const savedLanguage = localStorage.getItem("portfolio-language");
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && navigation.classList.contains("is-open")) {
+    navigation.classList.remove("is-open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.focus();
+  }
+});
+
+let savedLanguage;
+try {
+  savedLanguage = localStorage.getItem("portfolio-language");
+} catch {
+  savedLanguage = null;
+}
 const preferredLanguage = navigator.language.toLowerCase().startsWith("ja") ? "ja" : "en";
 setLanguage(savedLanguage || preferredLanguage);
 
@@ -59,4 +76,25 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
   revealItems.forEach((item) => observer.observe(item));
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+
+const navLinks = [...navigation.querySelectorAll("a[href^='#']")];
+const trackedSections = navLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+if ("IntersectionObserver" in window) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    navLinks.forEach((link) => {
+      const isCurrent = link.getAttribute("href") === `#${visible.target.id}`;
+      link.classList.toggle("is-current", isCurrent);
+      if (isCurrent) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  }, { rootMargin: "-30% 0px -60%", threshold: [0, .2, .5] });
+  trackedSections.forEach((section) => sectionObserver.observe(section));
 }

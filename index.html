@@ -1,235 +1,251 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nikhil Dhanda | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nikhil Dhanda is a cybersecurity-focused computing student in Auckland, building practical experience across security operations, software, VR and applied AI.">
+  <meta name="theme-color" content="#08111f">
+  <title>Nikhil Dhanda — Cybersecurity & Computing</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-  <!-- ─── NAVBAR ─── -->
-  <nav class="top-nav">
-    <ul class="tab-list">
-      <li data-tab="about"      class="tab-item active"><span class="tab-label-en">About Me</span><span class="tab-label-jp" style="display:none;">自己紹介</span></li>
-      <li data-tab="education"  class="tab-item"><span class="tab-label-en">Education</span><span class="tab-label-jp" style="display:none;">学歴</span></li>
-      <li data-tab="experience" class="tab-item"><span class="tab-label-en">Experience</span><span class="tab-label-jp" style="display:none;">経験</span></li>
-      <li data-tab="projects"   class="tab-item"><span class="tab-label-en">Projects</span><span class="tab-label-jp" style="display:none;">プロジェクト</span></li>
-    </ul>
-
-    <div class="language-toggle">
-      <button id="btn-en" class="lang-btn active">🇬🇧 ENG</button>
-      <button id="btn-jp" class="lang-btn">🇯🇵 日本語</button>
+  <a class="skip-link" href="#main"><span class="lang-en">Skip to content</span><span class="lang-ja" hidden>本文へ移動</span></a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Nikhil Dhanda, home">
+      <span class="brand-mark" aria-hidden="true">ND</span>
+      <span>Nikhil Dhanda</span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="lang-en">Menu</span><span class="lang-ja" hidden>メニュー</span>
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+      <a href="#work"><span class="lang-en">Work</span><span class="lang-ja" hidden>プロジェクト</span></a>
+      <a href="#experience"><span class="lang-en">Experience</span><span class="lang-ja" hidden>経験</span></a>
+      <a href="#education"><span class="lang-en">Education</span><span class="lang-ja" hidden>学歴</span></a>
+      <a href="#about"><span class="lang-en">About</span><span class="lang-ja" hidden>自己紹介</span></a>
+    </nav>
+    <div class="header-actions">
+      <div class="language-switch" role="group" aria-label="Language">
+        <button class="language-button is-active" type="button" data-language="en" aria-pressed="true">EN</button>
+        <button class="language-button" type="button" data-language="ja" aria-pressed="false">日本語</button>
+      </div>
+      <a class="header-contact" href="mailto:nikhildhanda@gmail.com"><span class="lang-en">Let's talk</span><span class="lang-ja" hidden>お問い合わせ</span> <span aria-hidden="true">↗</span></a>
     </div>
-  </nav>
+  </header>
 
-  <!-- ─── MAIN CONTENT ─── -->
-  <main class="content-area">
-
-    <!-- ── ABOUT ME ── -->
-    <section id="section-about" class="tab-content active">
-      <!-- EN -->
-      <div class="lang-section lang-en">
-        <div class="container">
-          <h1><span class="gradient-text">Hi, I'm Nikhil</span> 👋</h1>
-          <p>🔐 Cybersecurity student | Blue-team focused</p>
-          <p>🛡️ Labs, IR, SIEM, Defender</p>
-          <p>🌏 Goal: Cybersecurity analyst in Japan 🇯🇵</p>
-          <p><a href="https://github.com/NikhilDhanda" target="_blank">View my GitHub</a></p>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span class="lang-en">Auckland, New Zealand · Available from November 2026</span><span class="lang-ja" hidden>ニュージーランド・オークランド · 2026年11月より就業可能</span></p>
+        <div class="lang-en">
+          <h1>I investigate systems.<br><span>I build them too.</span></h1>
+          <p class="hero-summary">Cybersecurity-focused computing student with hands-on security operations experience and a growing portfolio across software, VR and applied AI.</p>
+        </div>
+        <div class="lang-ja" hidden>
+          <h1>仕組みを読み解き、<br><span>自ら形にする。</span></h1>
+          <p class="hero-summary">サイバーセキュリティとネットワークを中心に学ぶコンピューティング専攻の学生です。セキュリティ運用の実務的な経験を土台に、ソフトウェア、VR、生成AIを活用した開発にも取り組んでいます。</p>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work"><span class="lang-en">Explore my work</span><span class="lang-ja" hidden>プロジェクトを見る</span> <span aria-hidden="true">↓</span></a>
+          <a class="button button-quiet" href="https://github.com/NikhilDhanda" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <!-- JP -->
-      <div class="lang-section lang-jp" style="display:none;">
-        <div class="container">
-          <h1><span class="gradient-text">こんにちは、ニキルです</span> 👋</h1>
-          <p>🔐 サイバーセキュリティ専攻の学生 | ブルーチーム志向</p>
-          <p>🛡️ Defender・SIEM・IR・ラボ経験あり</p>
-          <p>🌏 目標：日本でサイバーセキュリティアナリスト 🇯🇵</p>
-          <p><a href="https://github.com/NikhilDhanda" target="_blank">GitHubを見る</a></p>
+
+      <aside class="signal-panel">
+        <div class="panel-header"><span>profile.signal</span><span class="panel-live">LIVE</span></div>
+        <div class="signal-row">
+          <span class="signal-index">01</span>
+          <div><strong><span class="lang-en">Defensive security</span><span class="lang-ja" hidden>ディフェンシブセキュリティ</span></strong><small><span class="lang-en">Security operations · Investigation · Blue team</span><span class="lang-ja" hidden>セキュリティ運用 · インシデント調査 · ブルーチーム</span></small></div>
         </div>
+        <div class="signal-row">
+          <span class="signal-index">02</span>
+          <div><strong><span class="lang-en">Software development</span><span class="lang-ja" hidden>ソフトウェア開発</span></strong><small>Python · C# · Unity · API integrations</small></div>
+        </div>
+        <div class="signal-row">
+          <span class="signal-index">03</span>
+          <div><strong><span class="lang-en">Japanese</span><span class="lang-ja" hidden>日本語</span></strong><small><span class="lang-en">JLPT N2 · Studying toward N1</span><span class="lang-ja" hidden>日本語能力試験N2 · N1に向けて学習中</span></small></div>
+        </div>
+        <div class="panel-footer"><span><span class="lang-en">Next milestone</span><span class="lang-ja" hidden>次の節目</span></span><strong><span class="lang-en">Bachelor of Computing Systems · Nov 2026</span><span class="lang-ja" hidden>コンピューティング・システム学士 · 2026年11月修了予定</span></strong></div>
+      </aside>
+    </section>
+
+    <section class="intro section-shell">
+      <p class="section-kicker"><span>01</span> <span class="lang-en">What connects the work</span><span class="lang-ja" hidden>共通する姿勢</span></p>
+      <p class="intro-statement lang-en">I like understanding how systems behave—whether I’m tracing a suspicious process, testing a physical shifter in Unity, or connecting AI services inside an application.</p>
+      <p class="intro-statement lang-ja" hidden>不審なプロセスを追跡するときも、Unityで実機のシフターを検証するときも、AIサービスをアプリに組み込むときも、根底にあるのは「仕組みを理解したい」という好奇心です。</p>
+    </section>
+
+    <section class="section-shell" id="work">
+      <div class="section-heading">
+        <p class="section-kicker"><span>02</span> <span class="lang-en">Selected work</span><span class="lang-ja" hidden>主なプロジェクト</span></p>
+        <div>
+          <h2><span class="lang-en">Built, tested,<br>investigated.</span><span class="lang-ja" hidden>開発・検証・調査。</span></h2>
+          <p><span class="lang-en">Projects spanning hardware, software, security and language learning.</span><span class="lang-ja" hidden>ハードウェア、ソフトウェア、セキュリティ、語学学習を横断する取り組みです。</span></p>
+        </div>
+      </div>
+
+      <div class="project-list">
+        <article class="project-card project-featured reveal">
+          <div class="project-meta"><span>01</span><span class="status-tag"><span class="lang-en">Team capstone · In development</span><span class="lang-ja" hidden>チーム卒業制作 · 開発中</span></span></div>
+          <div class="project-body">
+            <div>
+              <p class="project-type">Unity / C# / VR / Hardware input</p>
+              <h3>DriVR</h3>
+              <p class="lang-en">A university team project extending an existing VR driving application. My work centres on making physical and VR controls behave predictably across real hardware.</p>
+              <p class="lang-ja" hidden>既存のVR運転アプリを拡張する大学のチームプロジェクトです。実機とVRの入力を、異なるハードウェア構成でも自然かつ安定して動作させる部分を主に担当しています。</p>
+            </div>
+            <div class="project-detail-grid">
+              <div><span class="detail-label"><span class="lang-en">My contribution</span><span class="lang-ja" hidden>担当内容</span></span><p class="lang-en">G920/G29 wheel compatibility, physical manual-shifter inputs, manual transmission behaviour, Quest controller mappings and VR-only sequential shifting.</p><p class="lang-ja" hidden>G920/G29ステアリングホイールへの対応、物理シフター入力、マニュアル変速の挙動、Questコントローラーのマッピング、VRのみで行うシーケンシャルシフトを実装・検証。</p></div>
+              <div><span class="detail-label"><span class="lang-en">Problem solving</span><span class="lang-ja" hidden>課題解決</span></span><p class="lang-en">Investigated centre-position steering deadzones with the physical wheel and corrected shifter behaviour to reflect how reverse is actually engaged on the G920.</p><p class="lang-ja" hidden>実機で中央付近のステアリング・デッドゾーンを調査。また、G920でリバースへ入れる際の押し込み操作を再現するよう挙動を修正しました。</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span>02</span><span class="status-tag"><span class="lang-en">Independent · In development</span><span class="lang-ja" hidden>個人開発 · 開発中</span></span></div>
+          <div class="project-body">
+            <div>
+              <p class="project-type">Vanilla JS / Vite / LLM &amp; image APIs / IndexedDB</p>
+              <h3>VN Playground</h3>
+              <p class="lang-en">A browser-based visual roleplay app that presents generated stories as turn-sized visual-novel pages rather than an endless chat transcript.</p>
+              <p class="lang-ja" hidden>生成された物語を長いチャット履歴ではなく、ターン単位のビジュアルノベル画面として表示する、ブラウザベースのビジュアル・ロールプレイアプリです。</p>
+            </div>
+            <div class="project-detail-grid">
+              <div><span class="detail-label"><span class="lang-en">What I am building</span><span class="lang-ja" hidden>開発内容</span></span><p class="lang-en">Scenario and character cards, parsed dialogue and narration, multiple saved chats, turn navigation, regeneration controls and browser-local image storage.</p><p class="lang-ja" hidden>シナリオ・キャラクターカード、会話・ナレーションの解析、複数チャットの保存、ターン移動、再生成、ブラウザ内の画像保存機能。</p></div>
+              <div><span class="detail-label"><span class="lang-en">Provider pipeline</span><span class="lang-ja" hidden>生成パイプライン</span></span><p class="lang-en">OpenRouter handles storytelling and image-prompt generation; images can be produced through local Forge, Runware or RunPod. Vitest characterisation tests protect behaviour during refactoring.</p><p class="lang-ja" hidden>OpenRouterで物語と画像プロンプトを生成し、ローカルForge、Runware、RunPodから画像を作成。リファクタリング時の挙動をVitestの特性テストで保護しています。</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span>03</span><span class="status-tag"><span class="lang-en">Personal tool</span><span class="lang-ja" hidden>個人ツール</span></span></div>
+          <div class="project-body">
+            <div>
+              <p class="project-type">Python / Anki / KanjiVG / KANJIDIC2</p>
+              <h3>auto_kanji_info</h3>
+              <p class="lang-en">An Anki add-on created for my own Japanese sentence-mining workflow. It detects unique kanji in a note and automatically adds structured study data.</p>
+              <p class="lang-ja" hidden>自分の日本語センテンスマイニングを効率化するために開発したAnkiアドオンです。ノート内の重複しない漢字を検出し、学習情報を自動入力します。</p>
+            </div>
+            <div class="project-detail-grid">
+              <div><span class="detail-label"><span class="lang-en">How it works</span><span class="lang-ja" hidden>仕組み</span></span><p class="lang-en">Hooks into note creation, parses CJK characters, then adds readings, meanings, stroke count, frequency, radicals and component data from a local dataset.</p><p class="lang-ja" hidden>ノート追加時のフックでCJK文字を抽出し、ローカルデータから読み、意味、画数、頻度、部首、構成要素を取得して追加します。</p></div>
+              <div><span class="detail-label"><span class="lang-en">Designed for use</span><span class="lang-ja" hidden>実用面</span></span><p class="lang-en">Supports bulk re-population, preserves existing fields by default, and packages both machine-readable JSON and a human-readable summary.</p><p class="lang-ja" hidden>一括再生成に対応し、既存データは初期設定で保持。機械処理向けJSONと読みやすい要約を同時に保存します。</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span>04</span><span class="status-tag"><span class="lang-en">Supervised internship exercises</span><span class="lang-ja" hidden>指導下のインターン演習</span></span></div>
+          <div class="project-body">
+            <div>
+              <p class="project-type">Microsoft Defender / Advanced Hunting / OSINT</p>
+              <h3><span class="lang-en">Endpoint investigations</span><span class="lang-ja" hidden>エンドポイント調査</span></h3>
+              <p class="lang-en">Documented investigation exercises from my Spark internship, including suspicious command-line activity and an anomalous sign-in that required contextual validation.</p>
+              <p class="lang-ja" hidden>Sparkでのインターン中に取り組んだ調査演習です。不審なコマンドライン実行や、状況を踏まえた検証が必要な異常サインインを分析し、結果を文書化しました。</p>
+            </div>
+            <div class="project-detail-grid">
+              <div><span class="detail-label"><span class="lang-en">Investigation</span><span class="lang-ja" hidden>調査</span></span><p class="lang-en">Reviewed process trees, command-line context, device timelines, sign-in history, MFA status and related indicators.</p><p class="lang-ja" hidden>プロセスツリー、コマンドライン、端末タイムライン、サインイン履歴、MFA状態、関連IoCを確認。</p></div>
+              <div><span class="detail-label"><span class="lang-en">Outcome</span><span class="lang-ja" hidden>学び</span></span><p class="lang-en">Practised distinguishing malicious activity from benign context, using Advanced Hunting and documenting a defensible conclusion.</p><p class="lang-ja" hidden>Advanced Huntingを活用し、悪性挙動と正当な操作を文脈から切り分け、根拠のある結論として報告する流れを経験しました。</p></div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- ── EDUCATION ── -->
-    <section id="section-education" class="tab-content">
-      <!-- EN -->
-      <div class="lang-section lang-en">
-        <div class="container">
-          <h2>Education</h2>
-          <p>• Cybersecurity Diploma — Unitec Institute of Technology (current)</p>
-          <p>• Computer Information Systems Diploma (completed)</p>
-          <p>• B.Sc. Computer Science (in progress)</p>
-        </div>
+    <section class="section-shell" id="experience">
+      <div class="section-heading compact-heading">
+        <p class="section-kicker"><span>03</span> <span class="lang-en">Experience</span><span class="lang-ja" hidden>経験</span></p>
+        <div><h2><span class="lang-en">Security operations,<br>up close.</span><span class="lang-ja" hidden>現場に近い環境で学ぶ。</span></h2></div>
       </div>
-      <!-- JP -->
-      <div class="lang-section lang-jp" style="display:none;">
-        <div class="container">
-          <h2>学歴</h2>
-          <p>• ユニテック工科大学 サイバーセキュリティ・ディプロマ在学中</p>
-          <p>• コンピュータ情報システム・ディプロマ修了</p>
-          <p>• コンピュータサイエンス学士号取得中</p>
+      <article class="experience-block reveal">
+        <div class="experience-side">
+          <p class="experience-date">AUG 2024 — JUN 2025</p>
+          <p>Spark New Zealand<br>Auckland</p>
         </div>
+        <div class="experience-main">
+          <div class="experience-title"><h3><span class="lang-en">Cybersecurity Intern</span><span class="lang-ja" hidden>サイバーセキュリティ・インターン</span></h3><span>≈ 150 hrs</span></div>
+          <p class="lead lang-en">A year-long work-integrated programme of workshops, guided technical exercises, simulated investigations and exposure to cybersecurity professionals working in real security environments.</p>
+          <p class="lead lang-ja" hidden>1年間の就業統合型プログラムで、ワークショップ、指導付きの技術演習、模擬調査に取り組み、実際のセキュリティ現場で働く専門家から学びました。</p>
+          <div class="experience-points">
+            <p class="lang-en">Worked with Splunk and Microsoft Defender to inspect endpoint and network events, process trees, suspicious traffic and account activity.</p>
+            <p class="lang-ja" hidden>SplunkとMicrosoft Defenderを使い、エンドポイント・ネットワークイベント、プロセスツリー、不審な通信、アカウント活動を確認。</p>
+            <p class="lang-en">Analysed phishing samples through headers, URLs, domains and IP reputation using OSINT and threat-intelligence sources.</p>
+            <p class="lang-ja" hidden>メールヘッダー、URL、ドメイン、IPレピュテーションをOSINT・脅威インテリジェンスで照合し、フィッシングを分析。</p>
+            <p class="lang-en">Observed vulnerability scanning and prioritisation, and shadowed analysts handling live tickets and investigation documentation.</p>
+            <p class="lang-ja" hidden>脆弱性スキャンと優先順位付けを学び、実際のチケット対応や調査記録を行うアナリストをシャドーイング。</p>
+          </div>
+          <div class="tag-row"><span>Splunk</span><span>Microsoft Defender</span><span>Microsoft Sentinel</span><span>OSINT</span><span>Phishing analysis</span><span>Vulnerability management</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-shell" id="education">
+      <div class="section-heading compact-heading">
+        <p class="section-kicker"><span>04</span> <span class="lang-en">Education</span><span class="lang-ja" hidden>学歴</span></p>
+        <div><h2><span class="lang-en">A practical path<br>through computing.</span><span class="lang-ja" hidden>実践を重ねてきた<br>学びの軌跡。</span></h2></div>
+      </div>
+      <div class="education-list">
+        <article class="education-item reveal">
+          <p class="education-year">2025 — 2026</p>
+          <div><h3>Bachelor of Computing Systems</h3><p class="institution">Unitec · Auckland</p><p class="lang-en">Cybersecurity and Networking focus · Expected completion 22 November 2026</p><p class="lang-ja" hidden>サイバーセキュリティ／ネットワーク専攻 · 2026年11月22日修了予定</p><p class="coursework">Advanced Cyber Security · Malware Analysis · Computer Systems Security · Software Testing · Data Communications &amp; Networks · Computer Forensic Investigations</p></div>
+        </article>
+        <article class="education-item reveal">
+          <p class="education-year">2024 — 2025</p>
+          <div><h3>New Zealand Diploma in Cybersecurity (Level 6)</h3><p class="institution">Unitec · Auckland</p><p class="coursework">Data Analysis · Ethical Hacking &amp; Testing · Cybersecurity Management · Network Security · Cryptography</p></div>
+        </article>
+        <article class="education-item reveal">
+          <p class="education-year">2023 — 2024</p>
+          <div><h3>New Zealand Diploma in Information Systems (Level 5)</h3><p class="institution">Unitec · Auckland</p><p class="coursework">Programming Principles · Database Design · Quality Assurance &amp; Deployment · UI Design · Requirements Engineering</p></div>
+        </article>
       </div>
     </section>
 
-    <!-- ── EXPERIENCE ── -->
-    <section id="section-experience" class="tab-content">
-      <!-- EN -->
-      <div class="lang-section lang-en">
-        <div class="container">
-          <h2>Experience</h2>
-
-          <div class="experience-card">
-            <div class="experience-title">
-              🔹 Spark NZ — Cybersecurity Intern
-              <span style="font-weight:normal;font-size:0.9rem;">(Aug 2024 – Jun 2025, ≈150 hrs)</span>
-            </div>
-
-            <ul class="project-desc">
-              <li><strong>Network Detection & Response 🔍</strong><br>
-                  • Built Splunk dashboards • Analysed Suricata alerts • Investigated RDP traffic with Arkime</li>
-              <li><strong>Endpoint & Cloud Security ☁️</strong><br>
-                  • Managed Defender incidents • Custom alerts • KQL hunting in Sentinel</li>
-              <li><strong>Email & Phishing Analysis 📧</strong><br>
-                  • Dissected phishing emails via threat-intel look-ups</li>
-              <li><strong>Vulnerability Scanning 🛠️</strong><br>
-                  • Observed credentialed scans & risk prioritisation</li>
-              <li><strong>Malware & Forensics 🧬</strong><br>
-                  • Analysed malware samples & ransomware behaviour • Learned evidence-handling workflow</li>
-            </ul>
-
-            <p><em>Key skills:</em> Splunk | Defender | Sentinel | SIEM/EDR lifecycle | Basic DFIR</p>
-          </div>
-        </div>
+    <section class="section-shell skills-section" id="skills">
+      <div class="section-heading compact-heading">
+        <p class="section-kicker"><span>05</span> <span class="lang-en">Toolkit</span><span class="lang-ja" hidden>スキル</span></p>
+        <div><h2><span class="lang-en">Breadth, grounded<br>in hands-on work.</span><span class="lang-ja" hidden>実践を土台に、<br>領域を広げる。</span></h2></div>
       </div>
-
-      <!-- JP -->
-      <div class="lang-section lang-jp" style="display:none;">
-        <div class="container">
-          <h2>経験</h2>
-
-          <div class="experience-card">
-            <div class="experience-title">
-              🔹 Spark NZ — サイバーセキュリティ インターン
-              <span style="font-weight:normal;font-size:0.9rem;">（2024年8月 – 2025年6月、約150時間）</span>
-            </div>
-
-            <ul class="project-desc">
-              <li><strong>ネットワーク検知 & レスポンス 🔍</strong><br>
-                  • Splunkでダッシュボード作成 • Suricataアラート分析 • ArkimeでRDPトラフィック調査</li>
-              <li><strong>エンドポイント & クラウドセキュリティ ☁️</strong><br>
-                  • Defenderアラート対応 • カスタムアラート作成 • SentinelでKQLハンティング</li>
-              <li><strong>メール & フィッシング解析 📧</strong><br>
-                  • 脅威インテリジェンスを用いたフィッシングメール調査</li>
-              <li><strong>脆弱性スキャン 🛠️</strong><br>
-                  • 認証付きスキャンを観察し、リスク優先度付けを学習</li>
-              <li><strong>マルウェア & フォレンジック 🧬</strong><br>
-                  • マルウェアとランサムウェア挙動を分析 • 証拠取扱いフローを習得</li>
-            </ul>
-
-            <p><em>主要スキル:</em> Splunk | Defender | Sentinel | SIEM/EDR運用 | DFIR基礎</p>
-          </div>
-        </div>
+      <div class="skill-grid">
+        <article class="skill-card reveal"><span class="skill-number">01</span><h3><span class="lang-en">Cybersecurity</span><span class="lang-ja" hidden>サイバーセキュリティ</span></h3><p>Splunk · Microsoft Defender · Wireshark · Linux · Virtual machines · OSINT · Phishing analysis · Malware analysis · Networking · Threat intelligence</p></article>
+        <article class="skill-card reveal"><span class="skill-number">02</span><h3><span class="lang-en">Development</span><span class="lang-ja" hidden>開発</span></h3><p>Python · C# · Unity · Git · GitHub · JSON · APIs · Software testing · Requirements analysis · Use cases · UI concepts</p></article>
+        <article class="skill-card reveal"><span class="skill-number">03</span><h3><span class="lang-en">Applied AI</span><span class="lang-ja" hidden>生成AI活用</span></h3><p>LLM APIs · OpenRouter · Runware · Stable Diffusion workflows · Local models · LoRAs · Prompt pipelines · Multi-provider integration</p></article>
+        <article class="skill-card reveal"><span class="skill-number">04</span><h3><span class="lang-en">Ways of working</span><span class="lang-ja" hidden>開発プロセス</span></h3><p>Technical documentation · Investigation reporting · Git workflows · Jira · Confluence · Hardware testing · Team integration</p></article>
       </div>
     </section>
 
-    <!-- ── PROJECTS ── -->
-    <section id="section-projects" class="tab-content">
-      <!-- EN -->
-      <div class="lang-section lang-en">
-        <div class="container">
-          <h2>Projects</h2>
-
-          <div class="project">
-            <div class="project-title">Microsoft Defender Investigation</div>
-            <div class="project-desc">
-              Walkthrough of an internal malware incident using Defender’s advanced hunting, custom alerts, and timeline view.
-            </div>
-            <a href="https://github.com/NikhilDhanda/defender-investigation-lab" target="_blank">View on GitHub</a>
-          </div>
-
-          <div class="project">
-            <div class="project-title">KQL & SIEM Hunting Queries</div>
-            <div class="project-desc">
-              Custom KQL queries that detect anomalous PowerShell, suspicious logins, and lateral-movement patterns.
-            </div>
-            <a href="https://github.com/NikhilDhanda/siem-hunting-lab" target="_blank">View on GitHub</a>
-          </div>
-        </div>
+    <section class="section-shell" id="about">
+      <div class="section-heading compact-heading">
+        <p class="section-kicker"><span>06</span> <span class="lang-en">Beyond the stack</span><span class="lang-ja" hidden>技術以外の背景</span></p>
+        <div><h2><span class="lang-en">Long projects.<br>Real commitment.</span><span class="lang-ja" hidden>長く続ける力。</span></h2></div>
       </div>
-
-      <!-- JP -->
-      <div class="lang-section lang-jp" style="display:none;">
-        <div class="container">
-          <h2>プロジェクト</h2>
-
-          <div class="project">
-            <div class="project-title">Microsoft Defender 調査</div>
-            <div class="project-desc">
-              Defenderの高度な検索・カスタムアラート・タイムライン機能を使い、内部マルウェアインシデントを分析。
-            </div>
-            <a href="https://github.com/NikhilDhanda/defender-investigation-lab" target="_blank">GitHubで見る</a>
-          </div>
-
-          <div class="project">
-            <div class="project-title">KQL & SIEM ハンティングクエリ</div>
-            <div class="project-desc">
-              カスタムKQLで不審なPowerShell実行、異常ログイン、ラテラルムーブメントを検出。
-            </div>
-            <a href="https://github.com/NikhilDhanda/siem-hunting-lab" target="_blank">GitHubで見る</a>
-          </div>
-        </div>
+      <div class="about-grid">
+        <article class="about-card reveal">
+          <p class="about-character" lang="ja" aria-hidden="true">学</p>
+          <div><p class="project-type">Japanese / 日本語</p><h3><span class="lang-en">JLPT N2, working toward N1</span><span class="lang-ja" hidden>日本語能力試験N2取得、N1を目指して学習中</span></h3><p class="lang-en">Several years of independent study through native books, podcasts, YouTube, news and discussion. Japanese is a long-term commitment and another way I explore technology, society, science and culture.</p><p class="lang-ja" hidden>数年にわたり独学を続け、日本語の書籍、ポッドキャスト、YouTube、ニュース、議論などに日常的に触れています。日本語は長期的な取り組みであり、技術・社会・科学・文化への関心を広げるもう一つの手段でもあります。</p></div>
+        </article>
+        <article class="about-card reveal">
+          <p class="about-character" aria-hidden="true">△</p>
+          <div><p class="project-type">NOLS / Wyoming, USA</p><h3><span class="lang-en">Outdoor Leadership Diploma</span><span class="lang-ja" hidden>アウトドア・リーダーシップ・ディプロマ</span></h3><p class="lang-en">Expedition-based training in team leadership, risk assessment, emergency response, wilderness medicine and avalanche safety. A different setting, but a lasting foundation for responsibility and calm decision-making.</p><p class="lang-ja" hidden>遠征形式の訓練を通して、チームリーダーシップ、リスク評価、緊急対応、野外救急、雪崩安全を学びました。ITとは異なる環境ですが、責任感と冷静な判断の土台になっています。</p></div>
+        </article>
       </div>
     </section>
 
+    <section class="contact-section" id="contact">
+      <div class="section-shell contact-inner">
+        <p class="section-kicker"><span>07</span> <span class="lang-en">Contact</span><span class="lang-ja" hidden>お問い合わせ</span></p>
+        <div class="contact-copy">
+          <div class="lang-en"><h2>Let’s solve something<br>worth understanding.</h2><p>I’m interested in cybersecurity graduate and junior roles, especially security operations, blue-team and technical roles where security and development overlap.</p></div>
+          <div class="lang-ja" hidden><h2>理解する価値のある課題に、<br>一緒に取り組みませんか。</h2><p>セキュリティ運用、ブルーチームを中心としたサイバーセキュリティの新卒・ジュニア職、またセキュリティと開発が交わる技術職に関心があります。</p></div>
+          <a class="email-link" href="mailto:nikhildhanda@gmail.com">nikhildhanda@gmail.com <span aria-hidden="true">↗</span></a>
+          <div class="contact-links"><a href="https://github.com/NikhilDhanda" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ─── JAVASCRIPT ─── -->
-  <script>
-    /* Tab switching */
-    const tabs     = document.querySelectorAll('.tab-item');
-    const sections = document.querySelectorAll('.tab-content');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        sections.forEach(s => s.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById('section-' + tab.dataset.tab).classList.add('active');
-        applyLanguage(currentLang);   // keep language consistent
-      });
-    });
-
-    /* Language switching */
-    const btnEn = document.getElementById('btn-en');
-    const btnJp = document.getElementById('btn-jp');
-    let currentLang = 'en';
-
-    btnEn.addEventListener('click', () => switchLang('en'));
-    btnJp.addEventListener('click', () => switchLang('jp'));
-
-    function switchLang(lang) {
-      currentLang = lang;
-      btnEn.classList.toggle('active', lang === 'en');
-      btnJp.classList.toggle('active', lang === 'jp');
-
-      document.querySelectorAll('.tab-label-en').forEach(el => el.style.display = (lang === 'en' ? 'inline' : 'none'));
-      document.querySelectorAll('.tab-label-jp').forEach(el => el.style.display = (lang === 'jp' ? 'inline' : 'none'));
-
-      applyLanguage(lang);
-    }
-
-    function applyLanguage(lang) {
-      const activeSection = document.querySelector('.tab-content.active');
-      if (!activeSection) return;
-      activeSection.querySelectorAll('.lang-section').forEach(div => {
-        div.style.display = div.classList.contains('lang-' + lang) ? 'block' : 'none';
-      });
-    }
-
-    /* initial load */
-    document.addEventListener('DOMContentLoaded', () => applyLanguage(currentLang));
-  </script>
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> Nikhil Dhanda</p>
+    <a href="#top"><span class="lang-en">Back to top</span><span class="lang-ja" hidden>ページ上部へ</span> ↑</a>
+  </footer>
 </body>
 </html>

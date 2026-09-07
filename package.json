@@ -1,0 +1,6 @@
+{
+  "name": "nikhil-dhanda-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": { "dev": "node serve.mjs", "build": "node build.mjs", "check": "node --check script.js" }
+}

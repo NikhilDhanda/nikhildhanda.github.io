@@ -1,16 +1,15 @@
-# Nikhil Dhanda — Portfolio
+# Nikhil Dhanda — bilingual portfolio
 
-A fast, dependency-free personal portfolio for GitHub Pages. The site is bilingual (English and Japanese), responsive, and built with plain HTML, CSS and JavaScript.
+A responsive portfolio built with HTML, CSS and JavaScript, deployed through Sites. English and Japanese content includes project summaries, navigation, timeline entries and accessible labels. Original reports and screenshots remain in their source language.
 
-## Preview locally
+## Local development
 
-Open `index.html` directly, or run any static file server from this directory.
+Run `npm run dev` and open the printed local address. Run `npm run check` to check JavaScript syntax and `npm run build` to prepare the static output.
 
-## Updating content
+## Content
 
-- Add a project by duplicating a `.project-card` article in `index.html`.
-- Keep the English and Japanese copy together using `.lang-en` and `.lang-ja` elements.
-- Add new skill or background cards by duplicating the corresponding article.
-- Edit shared colours, spacing and typography through the variables at the top of `style.css`.
+The main page is in `index.html`; English copy has matching Japanese `data-ja` attributes. Project detail content for both languages is in `script.js`. The language switch supports reduced motion and remembers the selection. A language can also be selected with `?lang=ja` or `?lang=en`.
 
-GitHub Pages serves the site directly from the repository's `main` branch.
+The supplied resume is unchanged at `assets/Nikhil-Dhanda-Resume.pdf`. The Santa Stealer report is credited to Nikhil Dhanda and Keyu Patel, with individual contributions distinguished in the project detail. The original report is available as a DOCX download.
+
+The shared visual theme and responsive layouts are in `style.css`. Static build output goes to `dist/`. The Sites identity is retained in `.openai/hosting.json`.

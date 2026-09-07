@@ -1,100 +1,69 @@
-const languageButtons = document.querySelectorAll("[data-language]");
-const menuButton = document.querySelector(".menu-button");
-const navigation = document.querySelector(".primary-nav");
-
-function setLanguage(language) {
-  const isJapanese = language === "ja";
-  document.documentElement.lang = language;
-  document.title = isJapanese
-    ? "Nikhil Dhanda — サイバーセキュリティ＆コンピューティング"
-    : "Nikhil Dhanda — Cybersecurity & Computing";
-
-  document.querySelectorAll(".lang-en").forEach((element) => {
-    element.hidden = isJapanese;
-  });
-  document.querySelectorAll(".lang-ja").forEach((element) => {
-    element.hidden = !isJapanese;
-  });
-  languageButtons.forEach((button) => {
-    const isActive = button.dataset.language === language;
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
-  });
-
-  try {
-    localStorage.setItem("portfolio-language", language);
-  } catch {
-    // The language switch still works when storage is unavailable.
-  }
+const projectData = {
+ drivr: {
+  en: {title:'DriVR',kicker:'Team capstone · Unity / C# / VR',lead:'Bridging the gap between a virtual car and the hardware in your hands.',image:'drivr.png',alt:'DriVR simulator showing the steering wheel, manual gear display and roadway',sections:[['The project','Our capstone team is extending an existing VR driving application. My work focuses on Logitech G920/G29 wheel support, manual shifter input, Quest 3 controller mapping, and VR-only controls.'],['My contribution','I traced the input path when small steering movements near the centre produced little response. I tested changes with the physical wheel and adjusted the deadzone behaviour. I also corrected a shifter mapping that treated sixth gear as reverse, checking the G920’s push-down mechanism on the real hardware.'],['What it taught me','A value can look correct in the editor and still feel wrong in use. Testing against the actual device is part of the implementation, not the last step.']],flow:['Physical input','Input mapping','Vehicle response','Hands-on testing'],credit:'University team capstone · In development'},
+  ja: {title:'DriVR',kicker:'チーム卒業制作 · Unity / C# / VR',lead:'仮想の車と、手元のハードウェアをつなぐ。',image:'drivr.png',alt:'ステアリング、手動ギア表示、道路を表示するDriVRの画面',sections:[['プロジェクトについて','卒業制作チームで、既存のVR運転アプリを拡張しています。私はLogitech G920/G29の対応、物理シフター入力、Quest 3のコントローラーマッピング、VRのみで行う操作を担当しています。'],['私の担当','ハンドルの中央付近で小さな操作が反映されにくい問題に対し、入力経路を追跡。実機で検証しながらデッドゾーンの挙動を調整しました。また、6速をリバースとして扱っていた設定を、G920の押し込み機構を確認したうえで修正しました。'],['得られた学び','エディター上で値が正しくても、操作感が正しいとは限りません。実機での検証は、実装そのものの一部だと学びました。']],flow:['物理入力','入力マッピング','車両の応答','実機で検証'],credit:'大学のチーム卒業制作 · 開発中'}
+ },
+ vn: {
+  en:{title:'VN Playground',kicker:'Personal project · JavaScript / Vite / AI APIs',lead:'A browser-based visual roleplay app that turns generated stories into scenes you can explore.',image:'vn-playground.png',alt:'VN Playground visual storytelling interface with a science-fiction character and dialogue',sections:[['The project','A visual novel experience with scenario and character cards, parsed dialogue and narration, turn-by-turn navigation, saved chats, and image generation. Narrative and visual generation are coordinated as separate stages.'],['What I built','The app connects OpenRouter storytelling with image generation through Forge, Runware, or RunPod. Provider-specific settings, regeneration, image storage, and saved application state bring the pieces together into a usable experience.'],['What I’m learning','Model providers have different limits and failure modes. Prompt structure, asynchronous jobs, persistence, and recovery all become software design questions. The project uses vanilla JavaScript with Vite and Vitest as it evolves.']],flow:['Story context','Narrative generation','Visual prompt','Image generation'],credit:'Personal project · In development'},
+  ja:{title:'VN Playground',kicker:'個人開発 · JavaScript / Vite / AI API',lead:'生成された物語を、場面ごとに楽しめるブラウザ型ロールプレイアプリ。',image:'vn-playground.png',alt:'SFの登場人物と会話を表示するVN Playgroundの画面',sections:[['プロジェクトについて','シナリオとキャラクターのカード、会話とナレーションの解析、ターン単位の移動、チャット保存、画像生成を備えたビジュアルノベル体験です。文章と画像の生成を別々の段階として連携させています。'],['開発したもの','OpenRouterによる物語生成と、Forge、Runware、RunPodによる画像生成を接続しました。プロバイダー別の設定、再生成、画像保存、アプリ状態の保存を組み合わせ、一つの体験にしています。'],['現在の学び','モデルごとに制約も失敗の仕方も異なります。プロンプト、非同期処理、データ保存、復旧が、すべてアプリ設計の課題になります。Vanilla JavaScriptを使い、ViteとVitestで開発を支えています。']],flow:['物語の文脈','文章生成','画像プロンプト','画像生成'],credit:'個人プロジェクト · 開発中'}
+ },
+ santa:{
+  en:{title:'Santa Stealer',kicker:'Collaborative academic investigation · 2026',lead:'Connecting static clues with observed behaviour in an isolated malware analysis lab.',image:'santa-workflow.png',alt:'Santa Stealer analysis workflow covering lab setup, static and dynamic analysis, and evidence correlation',sections:[['The investigation','Keyu Patel and I examined a Windows information stealer in a controlled VMware lab: a Windows 11 host and Kali Linux with INetSim. Host-only networking, no default gateway, disabled shared folders, and snapshots kept the investigation contained.'],['My contribution','I handled Dependencies, RegShot, INetSim, Process Explorer, and Process Monitor, and shared the strings, PEiD, and PE header analysis. Keyu handled the reverse-engineering work and mitigation section.'],['What the evidence showed','Registry and process evidence connected a dropped Adobe.dll in AppData with a Run key and execution through rundll32.exe. We also observed browser-related activity and attempted outbound DNS/TLS communication. Static imports suggested credential and capture capabilities; they did not, on their own, prove those actions occurred.'],['A useful troubleshooting moment','INetSim’s HTTP services worked, but DNS did not start. I traced the issue to the Net::DNS version and resolved it using a compatible version and startup command. It turned an unfamiliar tool into a practical lesson in methodical troubleshooting.'],['Where the conclusion stops','The lab supported attempted outbound communication, not confirmed successful exfiltration. Keeping that distinction clear matters when turning observations into a defensible report.']],flow:['Isolate the lab','Inspect the sample','Observe behaviour','Correlate evidence'],credit:'Report by Nikhil Dhanda and Keyu Patel. Original supplied workflow and lab diagram. Report download is in English.',download:'Santa-Stealer-Malware-Analysis.docx',downloadText:'Download the original report',extraImage:'santa-lab.png',extraAlt:'Santa Stealer malware analysis lab setup'},
+  ja:{title:'Santa Stealer',kicker:'共同の学術調査 · 2026年',lead:'隔離した解析ラボで、静的な手がかりと実際の挙動を結びつける。',image:'santa-workflow.png',alt:'ラボ構築、静的・動的解析、証拠の照合を示すSanta Stealer解析のワークフロー',sections:[['調査について','Keyu Patelさんと、Windows向け情報窃取型マルウェアを調査しました。Windows 11と、INetSimを動かすKali LinuxをVMware上に構築。ホストオンリー接続、デフォルトゲートウェイなし、共有フォルダー無効化、スナップショットで実験を隔離しました。'],['私の担当','Dependencies、RegShot、INetSim、Process Explorer、Process Monitorを担当し、文字列・PEiD・PEヘッダー解析は共同で行いました。リバースエンジニアリングと対策の章はKeyuさんが担当しました。'],['確認できたこと','AppData内に配置されたAdobe.dll、Runレジストリキー、rundll32.exeによる実行を、レジストリとプロセスの証拠から結びつけました。ブラウザー関連の活動とDNS・TLSの外向き通信の試行も観測しました。静的なインポート情報は認証情報の取得などの能力を示唆しますが、それだけで実行を証明するものではありません。'],['トラブルシューティングの学び','INetSimのHTTPは動く一方で、DNSが起動しませんでした。Net::DNSのバージョンを調べ、互換性のあるバージョンと起動コマンドに変更して解決。初めてのツールを、一つずつ切り分ける姿勢を学べました。'],['結論の範囲','確認したのは外向き通信の試行であり、情報の持ち出し成功ではありません。観測と推測を分けることが、根拠のある報告につながります。']],flow:['ラボの隔離','サンプルの確認','挙動の観測','証拠の照合'],credit:'報告書：Nikhil Dhanda・Keyu Patel。提供されたワークフローとラボ構成図を掲載。ダウンロード資料は英語です。',download:'Santa-Stealer-Malware-Analysis.docx',downloadText:'原本の報告書をダウンロード',extraImage:'santa-lab.png',extraAlt:'Santa Stealerのマルウェア解析ラボ構成図'}
+ },
+ kanji:{
+  en:{title:'Auto Kanji Info',kicker:'Personal tool · Python / Anki',lead:'An Anki add-on built from a small frustration in my own Japanese study routine.',image:'kanji.png',alt:'Anki cards displaying kanji readings, meanings, stroke counts and component trees',sections:[['The problem','Adding the same kanji information to sentence-mining cards was repetitive. I wanted the useful context to appear automatically, leaving more time for reading and learning.'],['What I built','The add-on finds each unique CJK character when a note is created, then fills readings, meanings, stroke count, frequency, radicals, and components from a local dataset. A bulk action supports older notes, and existing fields are preserved by default.'],['Why it matters to me','Japanese is a long-term part of my life. Building tools around my own learning makes software development and language study reinforce each other.']],flow:['Create an Anki note','Find unique kanji','Look up local data','Enrich the card'],credit:'Personal Japanese-learning tool · Python, Anki, KanjiVG and KANJIDIC2'},
+  ja:{title:'Auto Kanji Info',kicker:'個人ツール · Python / Anki',lead:'自分の日本語学習で感じた、小さな不便から生まれたAnkiアドオン。',image:'kanji.png',alt:'漢字の読み、意味、画数、構成要素ツリーを表示するAnkiカード',sections:[['きっかけ','センテンスマイニング用カードに、同じ漢字情報を繰り返し追加していました。必要な情報を自動で表示し、読むことや学ぶことに時間を使いたいと考えました。'],['開発したもの','ノート作成時に重複のないCJK文字を抽出し、ローカルデータから読み、意味、画数、頻度、部首、構成要素を入力します。既存ノートにも一括処理ができ、初期設定では入力済みのフィールドを保持します。'],['私にとっての意味','日本語は長く続けている学びの一つです。自分の学習に役立つツールを作ることで、ソフトウェア開発と語学学習が互いを支えています。']],flow:['Ankiノートを作成','漢字を抽出','ローカルデータを検索','カードに情報を追加'],credit:'個人の日本語学習ツール · Python、Anki、KanjiVG、KANJIDIC2'}
+ }
+};
+const translations = [...document.querySelectorAll('[data-ja]')].map(el => ({el, en:el.innerHTML, ja:el.dataset.ja}));
+const imageLabels = [...document.querySelectorAll('[data-alt-ja]')].map(el=>({el,en:el.alt,ja:el.dataset.altJa}));
+const ariaLabels = [...document.querySelectorAll('[data-label-ja]')].map(el=>({el,en:el.getAttribute('aria-label'),ja:el.dataset.labelJa}));
+const languageButtons = [...document.querySelectorAll('[data-language]')];
+const dialog = document.querySelector('#project-dialog');
+const detail = document.querySelector('#detail-content');
+const menu = document.querySelector('.menu');
+const nav = document.querySelector('#navigation');
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+let language = 'en', activeProject = null, shiftTimer;
+function setLanguage(next, animate=false){
+ language = next === 'ja' ? 'ja' : 'en';
+ document.documentElement.lang = language;
+ translations.forEach(({el,en,ja})=>{if(language==='ja')el.textContent=ja;else el.innerHTML=en;});
+ imageLabels.forEach(({el,en,ja})=>el.alt=language==='ja'?ja:en);
+ ariaLabels.forEach(({el,en,ja})=>el.setAttribute('aria-label',language==='ja'?ja:en));
+ languageButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.language===language)));
+ nav.setAttribute('aria-label',language==='ja'?'メインナビゲーション':'Main navigation');
+ document.querySelector('.brand').setAttribute('aria-label',language==='ja'?'ニキル・ダンダ ホーム':'Nikhil Dhanda home');
+ document.querySelector('.round-link').setAttribute('aria-label',language==='ja'?'プロジェクトを見る':'Explore my projects');
+ document.title=language==='ja'?'Nikhil Dhanda — 好奇心から、ものづくりへ。':'Nikhil Dhanda — Curious by nature';
+ document.querySelector('meta[name="description"]').content=language==='ja'?'オークランドを拠点に、サイバーセキュリティ、VR、AI、日本語学習ツールに取り組むNikhil Dhandaのポートフォリオ。':'Meet Nikhil Dhanda. Cybersecurity student, creative builder and Japanese speaker in Auckland. Explore malware analysis, VR, AI storytelling and language tools.';
+ if(activeProject)renderProject(activeProject);
+ if(animate&&!reduced.matches){document.body.classList.remove('language-shift');void document.body.offsetWidth;document.body.classList.add('language-shift');clearTimeout(shiftTimer);shiftTimer=setTimeout(()=>document.body.classList.remove('language-shift'),550);}
+ try{localStorage.setItem('portfolio-language',language);}catch{}
+ document.querySelector('.language-announcement').textContent=language==='ja'?'日本語に切り替えました。':'Switched to English.';
 }
-
-languageButtons.forEach((button) => {
-  button.addEventListener("click", () => setLanguage(button.dataset.language));
-});
-
-menuButton.addEventListener("click", () => {
-  const isOpen = navigation.classList.toggle("is-open");
-  menuButton.setAttribute("aria-expanded", String(isOpen));
-});
-
-navigation.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navigation.classList.remove("is-open");
-    menuButton.setAttribute("aria-expanded", "false");
-  });
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && navigation.classList.contains("is-open")) {
-    navigation.classList.remove("is-open");
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.focus();
-  }
-});
-
-let savedLanguage;
-try {
-  savedLanguage = localStorage.getItem("portfolio-language");
-} catch {
-  savedLanguage = null;
+function element(tag,className,text){const el=document.createElement(tag);if(className)el.className=className;if(text)el.textContent=text;return el;}
+function renderProject(id){
+ const p=projectData[id][language];detail.replaceChildren();
+ detail.append(element('p','detail-kicker',p.kicker));
+ const title=element('h2','detail-title',p.title);title.id='detail-title';detail.append(title,element('p','detail-lead',p.lead));
+ const img=element('img','detail-image');img.src=`assets/${p.image}`;img.alt=p.alt;detail.append(img);
+ const flow=element('div','detail-flow');p.flow.forEach((text,i)=>{const step=element('span');step.append(element('b','',String(i+1).padStart(2,'0')),document.createTextNode(text));flow.append(step);});detail.append(flow);
+ p.sections.forEach(([heading,copy])=>{const section=element('section','detail-section');section.append(element('h3','',heading),element('p','',copy));detail.append(section);});
+ if(p.extraImage){const img=element('img','detail-image');img.src=`assets/${p.extraImage}`;img.alt=p.extraAlt;img.loading='lazy';detail.append(img);}
+ if(p.download){const a=element('a','detail-link',p.downloadText+' · DOCX ↓');a.href=`assets/${p.download}`;a.download='';detail.append(a);}
+ detail.append(element('p','detail-credit',p.credit));
 }
-const preferredLanguage = navigator.language.toLowerCase().startsWith("ja") ? "ja" : "en";
-setLanguage(savedLanguage || preferredLanguage);
-
-document.querySelector("#year").textContent = new Date().getFullYear();
-
-const revealItems = document.querySelectorAll(".reveal");
-if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
-}
-
-const navLinks = [...navigation.querySelectorAll("a[href^='#']")];
-const trackedSections = navLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
-
-if ("IntersectionObserver" in window) {
-  const sectionObserver = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (!visible) return;
-    navLinks.forEach((link) => {
-      const isCurrent = link.getAttribute("href") === `#${visible.target.id}`;
-      link.classList.toggle("is-current", isCurrent);
-      if (isCurrent) link.setAttribute("aria-current", "location");
-      else link.removeAttribute("aria-current");
-    });
-  }, { rootMargin: "-30% 0px -60%", threshold: [0, .2, .5] });
-  trackedSections.forEach((section) => sectionObserver.observe(section));
-}
+languageButtons.forEach(b=>b.addEventListener('click',()=>{if(language!==b.dataset.language)setLanguage(b.dataset.language,true);}));
+document.querySelectorAll('[data-project]').forEach(b=>b.addEventListener('click',()=>{activeProject=b.dataset.project;renderProject(activeProject);dialog.showModal();dialog.scrollTop=0;document.body.classList.add('dialog-open');}));
+document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
+dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+dialog.addEventListener('close',()=>{document.body.classList.remove('dialog-open');activeProject=null;});
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.focus();}});
+if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){nav.querySelectorAll('a').forEach(a=>{if(a.hash==='#'+entry.target.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}}},{rootMargin:'-20% 0px -60% 0px'});['about','projects','tools','journey'].forEach(id=>observer.observe(document.getElementById(id)));}
+let saved;try{saved=localStorage.getItem('portfolio-language');}catch{}
+const urlLanguage=new URLSearchParams(location.search).get('lang');
+setLanguage(urlLanguage||saved||(navigator.language.toLowerCase().startsWith('ja')?'ja':'en'));

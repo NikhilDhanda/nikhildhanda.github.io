@@ -53,3 +53,20 @@
 .project-card:hover .project-open,.project-card:focus-within .project-open{background:var(--highlight);border-color:var(--highlight)}
 .project-card:has(.project-open:focus-visible){outline:3px solid var(--primary);outline-offset:7px}
 .project-open:focus-visible{outline:none}
+
+/* A quiet mesh of color beneath the page, without moving or intercepting content. */
+body{position:relative;isolation:isolate;background:#fff}
+body::before{
+ content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+ background-color:hsla(0,0%,100%,1);
+ background-image:
+  radial-gradient(circle at 5% 5%,hsla(56,100%,91%,1) 0%,transparent 50%),
+  radial-gradient(circle at 95% 5%,hsla(202,100%,89%,1) 0%,transparent 37.3744%),
+  radial-gradient(circle at 3% 95%,hsla(24,100%,82%,1) 4.6685%,transparent 50%),
+  radial-gradient(circle at 70% 68%,hsla(180,100%,96%,1) 0%,transparent 50%);
+ background-blend-mode:normal,normal,normal,normal;
+ opacity:.8;animation:mesh-breathe 24s ease-in-out infinite alternate;
+}
+.header{background:rgba(255,255,255,.76)}
+@keyframes mesh-breathe{from{opacity:.72}to{opacity:.9}}
+@media(prefers-reduced-motion:reduce){body::before{animation:none;opacity:.8}}
